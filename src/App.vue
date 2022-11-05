@@ -1,14 +1,20 @@
 <template>
+  <Login_module />
+  <SignUp_modal />
   <Navbar />
 </template>
 
 <script>
+import Login_module from "./components/Login_module.vue";
 import Navbar from "./components/Navbar.vue";
+import SignUp_modal from "./components/SignUp_modal.vue";
 
 export default {
   name: "app",
   components: {
     Navbar,
+    Login_module,
+    SignUp_modal,
   },
   setup() {},
 };

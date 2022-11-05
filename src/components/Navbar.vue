@@ -30,7 +30,7 @@
             type="button"
             class="nav-link"
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
+            data-bs-target="#loginModal"
           >
             Login
           </a>
