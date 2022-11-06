@@ -24,6 +24,9 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/about">About</router-link>
           </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/events">Events</router-link>
+          </li>
         </ul>
         <ul class="navbar-nav mb-2 mb-lg-0">
           <a

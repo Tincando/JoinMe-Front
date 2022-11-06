@@ -63,8 +63,8 @@
               <div class="px-5">
                 <h2 class="fw-bold">Find an event</h2>
                 <p>
-                  Concert,shows, events are happening all the time find some who
-                  has the same taste as you.
+                  Concert, shows, events are happening all the time find someone
+                  who has the same taste as you.
                 </p>
               </div>
             </div>

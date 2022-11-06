@@ -2,9 +2,11 @@
   <Login_module />
   <SignUp_modal />
   <Navbar />
+  <Footer />
 </template>
 
 <script>
+import Footer from "./components/Footer.vue";
 import Login_module from "./components/Login_module.vue";
 import Navbar from "./components/Navbar.vue";
 import SignUp_modal from "./components/SignUp_modal.vue";
@@ -15,6 +17,7 @@ export default {
     Navbar,
     Login_module,
     SignUp_modal,
+    Footer,
   },
   setup() {},
 };
