@@ -25,6 +25,10 @@ export default {
 
 
 <style lang="scss">
+body {
+  background-image: url("@/assets/web_back1.jpg");
+  background-size: cover;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

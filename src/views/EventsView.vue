@@ -2,6 +2,15 @@
   <div class="events">
     <div class="container-md pt-5 pb-3">
       <h3 class="text-start">Events:</h3>
+      <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
       <hr />
     </div>
     <div class="container event text-start">

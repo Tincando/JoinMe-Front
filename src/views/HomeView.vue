@@ -15,25 +15,60 @@
           </p>
         </div>
         <div class="col">
-          <img src="@/assets/people.jpg" class="img-fluid" alt="people image" />
+          <img
+            src="@/assets/people.jpg"
+            class="img-fluid rounded"
+            alt="people image"
+          />
         </div>
       </div>
     </div>
+    <hr />
     <!-- Jos jedan section-->
-    <div class="container">
+    <div class="container py-5">
       <div class="row g-2">
         <div class="col">
-          <img class="w-50" src="@/assets/startagroup.jpg" />
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Concerts</h5>
+              <img class="w-50" src="@/assets/startagroup.jpg" />
+              <p class="card-text">
+                With supporting text below as a natural lead-in to additional
+                content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col">
-          <img class="w-50" src="@/assets/startagroup.jpg" />
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Theater</h5>
+              <img class="w-50" src="@/assets/startagroup.jpg" />
+              <p class="card-text">
+                With supporting text below as a natural lead-in to additional
+                content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
         <div class="col">
-          <img class="w-50" src="@/assets/startagroup.jpg" />
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Pub</h5>
+              <img class="w-50" src="@/assets/startagroup.jpg" />
+              <p class="card-text">
+                With supporting text below as a natural lead-in to additional
+                content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
+    <hr />
     <!--How it works-->
     <div class="container py-5">
       <div class="container text-center">
