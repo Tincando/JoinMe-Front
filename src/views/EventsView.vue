@@ -2,15 +2,15 @@
   <div class="events">
     <div class="container-md pt-5 pb-3">
       <h3 class="text-start">Events:</h3>
-      <form class="d-flex">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-primary" type="submit">Search</button>
-      </form>
+
+      <input
+        class="form-control"
+        type="search"
+        placeholder="Upisite ime grada"
+        aria-label="Search"
+        v-model="term"
+      />
+
       <hr />
     </div>
     <div class="container event text-start">
@@ -30,12 +30,75 @@
         </div>
       </div>
     </div>
+
+    <div
+      class="container event text-start"
+      v-for="event in events"
+      v-bind:key="event.id"
+    >
+      <div class="flex row py-4">
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <img class="concert rounded img-fluid" :src="event.url" />
+          </div>
+        </div>
+        <div class="col-7">
+          <div class="container-fluid">
+            <h2>{{ event.posted_at }}</h2>
+            <h1>{{ event.title }}</h1>
+            <p>{{ event.details }}</p>
+            <p>{{ event.city }}</p>
+            <p class="text-end">0/10</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import store from "@/store.js";
+import _ from "lodash";
+
 export default {
   name: "events",
+  data() {
+    return {
+      store,
+      events: [],
+      term: "",
+    };
+  },
+  watch: {
+    term: _.debounce(function (val) {
+      this.fetchPosts(val);
+    }, 500),
+  },
+
+  methods: {
+    fetchPosts() {
+      fetch(`http://localhost:3000/posts?city=${this.term} `)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Podaci s backenda", data);
+          this.events = data.map((doc) => {
+            return {
+              id: doc.id,
+              url: doc.source,
+              details: doc.createdBy,
+              title: doc.title,
+              city: doc.city,
+              posted_at: Number(doc.posted_at),
+            };
+          });
+        });
+    },
+  },
+  mounted() {
+    this.fetchPosts();
+  },
 };
 </script>
 
