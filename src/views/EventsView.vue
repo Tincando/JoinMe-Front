@@ -8,7 +8,7 @@
         type="search"
         placeholder="Upisite ime grada"
         aria-label="Search"
-        v-model="term"
+        v-model="store.searchTerm"
       />
 
       <hr />
@@ -48,6 +48,7 @@
             <h1>{{ event.title }}</h1>
             <p>{{ event.details }}</p>
             <p>{{ event.city }}</p>
+
             <p class="text-end">0/10</p>
           </div>
         </div>
@@ -59,6 +60,7 @@
 <script>
 import store from "@/store.js";
 import _ from "lodash";
+import { Events } from "@/services";
 
 export default {
   name: "events",
@@ -70,13 +72,16 @@ export default {
     };
   },
   watch: {
-    term: _.debounce(function (val) {
+    "store.searchTerm": _.debounce(function (val) {
       this.fetchPosts(val);
     }, 500),
   },
 
   methods: {
-    fetchPosts() {
+    async fetchPosts(term) {
+      term = term || store.searchTerm;
+      this.events = await Events.getAll(term);
+      /*
       fetch(`http://localhost:3000/posts?city=${this.term} `)
         .then((response) => {
           return response.json();
@@ -94,8 +99,10 @@ export default {
             };
           });
         });
+        */
     },
   },
+
   mounted() {
     this.fetchPosts();
   },
