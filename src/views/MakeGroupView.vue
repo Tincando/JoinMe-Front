@@ -1,15 +1,38 @@
 <template>
   <div class="main">
-    <h1>Napravi grupu:</h1>
-    <from>
-      <div class="from-group">
-        <input class="input" v-model="createdBy" />
-        <input class="input" v-model="city" />
-        <input class="input" v-model="source" />
-        <input class="input" v-model="title" />
-        <button class="btn btn-primary" @click="postEvent">Make</button>
-      </div>
-    </from>
+    <div class="main-h1 py-4">
+      <h1>Start a group:</h1>
+    </div>
+    <div class="container p-5">
+      <from>
+        <div class="from-group">
+          <div class="form-group">
+            <label for="createdby">Name:</label>
+            <input
+              class="form-control"
+              id="createdby"
+              type="text"
+              v-model="createdBy"
+            />
+          </div>
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input class="form-control" type="text" id="city" v-model="city" />
+          </div>
+          <div class="form-group">
+            <label for="source">Url slike: </label>
+            <input class="form-control" id="source" v-model="source" />
+          </div>
+          <div class="form-group">
+            <label for="title">Name of the event: </label>
+            <input class="form-control" id="title" v-model="title" />
+          </div>
+          <div class="form-group py-3">
+            <button class="btn btn-primary" @click="postEvent">Make</button>
+          </div>
+        </div>
+      </from>
+    </div>
   </div>
 </template>
 
@@ -39,7 +62,6 @@ export default {
 
       let newpost = await Events.add(post);
       console.log("Spremljeni post", newpost.data);
-      this.imageData = null;
       this.$router.push({ name: "events" });
     },
   },

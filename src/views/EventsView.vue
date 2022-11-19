@@ -30,30 +30,7 @@
         </div>
       </div>
     </div>
-
-    <div
-      class="container event text-start"
-      v-for="event in events"
-      v-bind:key="event.id"
-    >
-      <div class="flex row py-4">
-        <div class="col">
-          <div class="d-flex justify-content-center">
-            <img class="concert rounded img-fluid" :src="event.url" />
-          </div>
-        </div>
-        <div class="col-7">
-          <div class="container-fluid">
-            <h2>{{ event.posted_at }}</h2>
-            <h1>{{ event.title }}</h1>
-            <p>{{ event.details }}</p>
-            <p>{{ event.city }}</p>
-
-            <p class="text-end">0/10</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <dogadaj v-for="event in events" :info="event" v-bind:key="event.id" />
   </div>
 </template>
 
@@ -61,6 +38,7 @@
 import store from "@/store.js";
 import _ from "lodash";
 import { Events } from "@/services";
+import dogadaj from "@/components/dogadaj.vue";
 
 export default {
   name: "events",
@@ -70,6 +48,9 @@ export default {
       events: [],
       term: "",
     };
+  },
+  components: {
+    dogadaj,
   },
   watch: {
     "store.searchTerm": _.debounce(function (val) {
