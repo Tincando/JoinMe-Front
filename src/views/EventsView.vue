@@ -84,7 +84,7 @@ export default {
     },
   },
 
-  mounted() {
+  created() {
     this.fetchPosts();
   },
 };

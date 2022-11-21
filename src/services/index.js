@@ -11,7 +11,15 @@ let Events = {
   },
 
   async getAll(searchTerm) {
-    let response = await Service.get(`/posts?city=${searchTerm}`);
+    let options = {};
+
+    if (searchTerm) {
+      options.params = {
+        _any: searchTerm,
+      };
+    }
+
+    let response = await Service.get("/posts", options);
     let events = response.data.map((doc) => {
       return {
         id: doc.id,

@@ -13,6 +13,7 @@
             <h1>{{ info.title }}</h1>
             <p>{{ info.details }}</p>
             <p>{{ info.city }}</p>
+            <p>{{ info.id }}</p>
 
             <p class="text-end">0/10</p>
           </div>
