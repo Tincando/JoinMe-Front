@@ -2,7 +2,7 @@
   <div class="home">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" />-->
     <!--Main content-->
-    <div class="container pt-6 pb-5">
+    <div class="container pt-6 pb-5 hidden tr-1">
       <div class="row">
         <div class="col">
           <h1 class="fw-bold">
@@ -27,7 +27,7 @@
     <!-- Jos jedan section-->
     <div class="container py-5">
       <div class="row g-2">
-        <div class="col">
+        <div class="col hidden tr-3">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Concerts</h5>
@@ -40,7 +40,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col hidden tr-2">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Theater</h5>
@@ -53,7 +53,7 @@
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col hidden tr-1">
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Pub</h5>
@@ -79,7 +79,7 @@
         </p>
         <div class="container">
           <div class="row p-5">
-            <div class="col group">
+            <div class="col group hidden tr-3">
               <div class="container py-4">
                 <img class="container w-50 rounded-circle" src="" />
               </div>
@@ -91,7 +91,7 @@
                 </p>
               </div>
             </div>
-            <div class="col">
+            <div class="col hidden tr-2">
               <div class="container py-4">
                 <img class="container w-50 rounded-circle" src="" />
               </div>
@@ -103,7 +103,7 @@
                 </p>
               </div>
             </div>
-            <div class="col group">
+            <div class="col group hidden tr-1">
               <div class="container py-4">
                 <img class="container w-50 rounded-circle" src="" />
               </div>
@@ -139,6 +139,20 @@ export default {
   name: "HomeView",
   components: {
     // HelloWorld,
+  },
+
+  mounted() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
   },
 };
 </script>

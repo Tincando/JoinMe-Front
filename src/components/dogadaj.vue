@@ -9,7 +9,7 @@
         </div>
         <div class="col-7">
           <div class="container-fluid">
-            <h2>{{ info.posted_at }}</h2>
+            <h2>{{ formatTime(info.posted_at) }}</h2>
             <h1>{{ info.title }}</h1>
             <p>{{ info.details }}</p>
             <p>{{ info.city }}</p>
@@ -24,9 +24,17 @@
 </template>
 
 <script>
+import moment from "moment";
+
 export default {
   name: "dogadaj",
   props: ["info"],
+
+  methods: {
+    formatTime(t) {
+      return moment().format(t);
+    },
+  },
 };
 </script>
 

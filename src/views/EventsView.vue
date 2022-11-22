@@ -30,7 +30,12 @@
         </div>
       </div>
     </div>
-    <dogadaj v-for="event in events" :info="event" v-bind:key="event.id" />
+
+    <div :key="event.id" v-for="event in events">
+      <router-link :to="{ name: 'event-details', params: { id: event.id } }">
+        <dogadaj :info="event"
+      /></router-link>
+    </div>
   </div>
 </template>
 
@@ -80,6 +85,8 @@ export default {
             };
           });
         });
+
+       
         */
     },
   },
@@ -91,6 +98,10 @@ export default {
 </script>
 
 <style>
+a {
+  text-decoration: none;
+  color: black;
+}
 .concert {
   width: 250px;
 }

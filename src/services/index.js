@@ -6,8 +6,22 @@ let Service = axios.create({
 });
 
 let Events = {
-  add(post) {
-    return Service.post("/posts", post);
+  add(event) {
+    return Service.post("/events", event);
+  },
+
+  async getOne(id) {
+    let response = await Service.get(`/events/${id}`);
+
+    let doc = response.data;
+
+    return {
+      id: doc._id,
+      url: doc.source,
+      email: doc.createdBy,
+      title: doc.title,
+      posted_at: Number(doc.postedAt),
+    };
   },
 
   async getAll(searchTerm) {
