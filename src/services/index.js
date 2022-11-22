@@ -21,6 +21,8 @@ let Events = {
       email: doc.createdBy,
       title: doc.title,
       posted_at: Number(doc.postedAt),
+      limit: doc.limit,
+      people: doc.people,
     };
   },
 
@@ -41,7 +43,9 @@ let Events = {
         details: doc.createdBy,
         title: doc.title,
         city: doc.city,
-        posted_at: Number(doc.posted_at),
+        posted_at: doc.postedAt,
+        limit: doc.limit,
+        people: doc.people,
       };
     });
     return events;

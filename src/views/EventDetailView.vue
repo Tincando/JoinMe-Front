@@ -6,6 +6,8 @@
     <div class="container-md">
       <h1>Details</h1>
       <p>{{ event.title }}</p>
+      <p>Friends going: {{ event.people }}/{{ event.limit }}</p>
+      <button class="btn btn-primary">Im going</button>
     </div>
   </div>
 </template>

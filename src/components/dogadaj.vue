@@ -14,8 +14,11 @@
             <p>{{ info.details }}</p>
             <p>{{ info.city }}</p>
             <p>{{ info.id }}</p>
-
-            <p class="text-end">0/10</p>
+            <div v-if="info.limit">
+              <p class="text-end">
+                Friends going: {{ info.people }}/{{ info.limit }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -32,7 +35,7 @@ export default {
 
   methods: {
     formatTime(t) {
-      return moment().format(t);
+      return moment(t).format("MMMM Do YYYY, h:mm:ss a");
     },
   },
 };

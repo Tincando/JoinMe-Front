@@ -27,6 +27,16 @@
             <label for="title">Name of the event: </label>
             <input class="form-control" id="title" v-model="title" />
           </div>
+          <div class="form-group">
+            <label for="limit">Limit number of people: </label>
+            <input
+              class="form-control"
+              type="number"
+              id="limit"
+              v-model="limit"
+              min="0"
+            />
+          </div>
           <div class="form-group py-3">
             <button class="btn btn-primary" @click="postEvent">Make</button>
           </div>
@@ -47,6 +57,7 @@ export default {
       source: "",
       title: "",
       city: "",
+      limit: "",
     };
   },
 
@@ -58,6 +69,8 @@ export default {
         source: this.source,
         title: this.title,
         city: this.city,
+        limit: this.limit,
+        people: 0,
       };
 
       let newpost = await Events.add(post);
