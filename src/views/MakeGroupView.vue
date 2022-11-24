@@ -57,7 +57,7 @@ export default {
       source: "",
       title: "",
       city: "",
-      limit: "",
+      limit: 0,
     };
   },
 

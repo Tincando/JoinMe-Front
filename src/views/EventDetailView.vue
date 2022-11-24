@@ -7,7 +7,7 @@
       <h1>Details</h1>
       <p>{{ event.title }}</p>
       <p>Friends going: {{ event.people }}/{{ event.limit }}</p>
-      <button class="btn btn-primary">Im going</button>
+      <button class="btn btn-primary" @click="pat">Im going</button>
     </div>
   </div>
 </template>
@@ -30,6 +30,21 @@ export default {
   name: "event-details",
   components: {
     dogadaj,
+  },
+  methods: {
+    async pat() {
+      if (this.event.people < this.event.limit) {
+        let doc = {
+          _id: this.event.id,
+          people: this.event.people + 1,
+        };
+        let newpost = await Events.up(doc);
+        console.log("Spremljeni post", newpost.data);
+        this.$router.push({ name: "events" });
+      } else {
+        alert("Group is full, I'm sorry");
+      }
+    },
   },
 };
 </script>

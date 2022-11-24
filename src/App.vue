@@ -10,9 +10,14 @@ import Footer from "./components/Footer.vue";
 import Login_module from "./components/Login_module.vue";
 import Navbar from "./components/Navbar.vue";
 import SignUp_modal from "./components/SignUp_modal.vue";
+import { Auth } from "@/services";
+import store from "@/store.js";
 
 export default {
   name: "app",
+  data() {
+    return { auth: Auth.state, store: store };
+  },
   components: {
     Navbar,
     Login_module,
@@ -20,7 +25,12 @@ export default {
     Footer,
   },
 
-  methods: {},
+  methods: {
+    logout() {
+      Auth.logout();
+      this.$router.go();
+    },
+  },
 };
 </script>
 
