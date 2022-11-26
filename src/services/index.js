@@ -131,4 +131,10 @@ let Auth = {
   },
 };
 
-export { Service, Events, Auth };
+let User = {
+  async signup(newuser) {
+    return Service.post("/user", newuser);
+  },
+};
+
+export { Service, Events, Auth, User };

@@ -33,7 +33,18 @@
             >
           </li>
         </ul>
+
         <ul class="navbar-nav mb-2 mb-lg-0">
+          <div>
+            <a
+              type="button"
+              class="nav-link"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              Logout
+            </a>
+          </div>
           <a
             type="button"
             class="nav-link"

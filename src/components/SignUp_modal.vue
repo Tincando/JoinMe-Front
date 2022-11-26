@@ -72,7 +72,7 @@
                 placeholder="18-99"
               />
             </div>
-            <button type="submit" class="btn btn-primary">Sign up</button>
+            <button @click="signup" class="btn btn-primary">Sign up</button>
           </form>
         </div>
       </div>
@@ -81,6 +81,8 @@
 </template>
 
 <script>
+import { User } from "@/services";
+
 export default {
   name: "SignUp",
 
@@ -92,6 +94,17 @@ export default {
       location: " ",
       age: " ",
     };
+  },
+  methods: {
+    async signup() {
+      let newuser = {
+        name: this.name,
+        username: this.email,
+        password: this.password,
+      };
+      let success = await User.signup(newuser);
+      console.log("Rezultat prijave", success);
+    },
   },
 };
 </script>

@@ -43,7 +43,7 @@
                 placeholder="Password"
               />
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button @click="login" class="btn btn-primary">Login</button>
           </form>
         </div>
         <div class="modal-footer">
@@ -77,7 +77,7 @@ export default {
       let success = await Auth.login(this.email, this.password);
       console.log("Rezultat prijave", success);
       if (success == true) {
-        this.$router.push({ name: "posts" });
+        this.$router.push({ name: "events" });
       }
     },
   },
