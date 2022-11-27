@@ -35,17 +35,11 @@
         </ul>
 
         <ul class="navbar-nav mb-2 mb-lg-0">
-          <div>
-            <a
-              type="button"
-              class="nav-link"
-              data-bs-toggle="modal"
-              data-bs-target="#loginModal"
-            >
-              Logout
-            </a>
+          <div v-if="auth.authenticated">
+            <a @click="logout" type="button" class="nav-link"> Logout </a>
           </div>
           <a
+            v-if="!auth.authenticated"
             type="button"
             class="nav-link"
             data-bs-toggle="modal"
@@ -54,6 +48,7 @@
             Login
           </a>
           <a
+            v-if="!auth.authenticated"
             type="button"
             class="nav-link"
             data-bs-toggle="modal"
@@ -70,8 +65,20 @@
 </template>
   
   <script>
+import { Auth } from "@/services";
+
 export default {
   name: "NavBar",
+  data() {
+    return { auth: Auth.state };
+  },
+
+  methods: {
+    logout() {
+      Auth.logout();
+      this.$router.go();
+    },
+  },
 };
 </script>
   
