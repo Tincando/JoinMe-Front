@@ -18,7 +18,7 @@
           ></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form @submit.stop.prevent="login">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <input
@@ -28,6 +28,7 @@
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Enter email"
+                required
               />
               <small id="emailHelp" class="form-text text-muted"
                 >We'll never share your email with anyone else.</small
@@ -41,19 +42,11 @@
                 class="form-control"
                 id="exampleInputPassword1"
                 placeholder="Password"
+                required
               />
             </div>
-            <button @click="login" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Login</button>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-dismiss="modal"
-          >
-            Close
-          </button>
         </div>
       </div>
     </div>

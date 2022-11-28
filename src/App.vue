@@ -16,7 +16,10 @@ import store from "@/store.js";
 export default {
   name: "app",
   data() {
-    return { auth: Auth.state, store: store };
+    return {
+      auth: Auth.state,
+      store: store,
+    };
   },
   components: {
     Navbar,

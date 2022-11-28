@@ -86,12 +86,11 @@ let Auth = {
   // spremimao ga u "localStorage" - JavaScript memoriju koja OSTAJE
   // i nakon što zatvorimo preglednik ili osvježimo stranicu
   async login(username, password) {
-
     let response = await Service.post("/auth", {
       username,
       password,
     });
-    
+
     let user = response.data;
     // localStorage može sačuvati samo string, boolean ili number
     // pa moramo pretvoriti objekt u string (JSON je string)

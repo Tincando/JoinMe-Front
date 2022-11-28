@@ -31,12 +31,13 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Concerts</h5>
-              <img class="w-50" src="@/assets/startagroup.jpg" />
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
+              <img class="w-50 rounded" src="@/assets/concerts.png" />
+              <p class="card-text pt-3">
+                Looking for a concert? Look no further
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <router-link to="/events" class="btn btn-warning"
+                >To Concerts</router-link
+              >
             </div>
           </div>
         </div>
@@ -44,12 +45,13 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Theater</h5>
-              <img class="w-50" src="@/assets/startagroup.jpg" />
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
+              <img class="w-50 rounded" src="@/assets/theater.png" />
+              <p class="card-text pt-3">
+                Looking for a theater event? Look no further
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <router-link to="/events" class="btn btn-warning"
+                >To Theater</router-link
+              >
             </div>
           </div>
         </div>
@@ -57,12 +59,13 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Pub</h5>
-              <img class="w-50" src="@/assets/startagroup.jpg" />
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
+              <img class="w-50 rounded" src="@/assets/pubs.png" />
+              <p class="card-text pt-3">
+                Looking for a Pub event? Look no further
               </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <router-link to="/events" class="btn btn-warning"
+                >To Pubs</router-link
+              >
             </div>
           </div>
         </div>
@@ -81,7 +84,10 @@
           <div class="row p-5">
             <div class="col group hidden tr-3">
               <div class="container py-4">
-                <img class="container w-50 rounded-circle" src="" />
+                <img
+                  class="container w-50 rounded-circle"
+                  src="@/assets/startagroup.jpg"
+                />
               </div>
               <div class="px-5">
                 <h2 class="fw-bold">Join a group</h2>
@@ -93,7 +99,10 @@
             </div>
             <div class="col hidden tr-2">
               <div class="container py-4">
-                <img class="container w-50 rounded-circle" src="" />
+                <img
+                  class="container w-50 rounded-circle"
+                  src="@/assets/find_an_event.png"
+                />
               </div>
               <div class="px-5">
                 <h2 class="fw-bold">Find an event</h2>
@@ -105,7 +114,10 @@
             </div>
             <div class="col group hidden tr-1">
               <div class="container py-4">
-                <img class="container w-50 rounded-circle" src="" />
+                <img
+                  class="container w-50 rounded-circle"
+                  src="@/assets/start_a_group.png"
+                />
               </div>
               <div class="px-5">
                 <h2 class="fw-bold">Start a group</h2>
@@ -118,9 +130,9 @@
           </div>
         </div>
       </div>
-      <div>
+      <div v-if="!auth.authenticated">
         <button
-          class="btn btn-lg btn-success"
+          class="btn btn-lg btn-warning"
           data-bs-toggle="modal"
           data-bs-target="#SignupModal"
         >
@@ -134,9 +146,15 @@
 <script>
 // @ is an alias to /src
 //import HelloWorld from "@/components/Home_page.vue";
+import { Auth } from "@/services";
 
 export default {
-  name: "HomeView",
+  name: "home",
+  data() {
+    return {
+      auth: Auth.state,
+    };
+  },
   components: {
     // HelloWorld,
   },

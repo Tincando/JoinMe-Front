@@ -57,7 +57,7 @@ const router = createRouter({
 // izvrši prije svake rute
 router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page;
-  const publicPages = ["/", "/login", "/signup", "/events"];
+  const publicPages = ["/", "/about", "/login", "/signup", "/events"];
   const authRequired = !publicPages.includes(to.path);
   const user = Auth.getUser();
   // ako je potreban login, ali nema korisnika
