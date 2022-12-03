@@ -60,7 +60,7 @@ router.beforeEach((to, from, next) => {
   const publicPages = ["/", "/about", "/login", "/signup", "/events"];
   const authRequired = !publicPages.includes(to.path);
   const user = Auth.getUser();
-  // ako je potreban login, ali nema korisnika
+  //ako je potreban login, ali nema korisnika
   if (authRequired && !user) {
     return next("/");
   }

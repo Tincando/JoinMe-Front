@@ -18,7 +18,7 @@
           ></button>
         </div>
         <div class="modal-body">
-          <form @submit.stop.prevent="login">
+          <form @submit.prevent="login">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
               <input
@@ -45,7 +45,7 @@
                 required
               />
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button class="btn btn-primary">Login</button>
           </form>
         </div>
       </div>
@@ -61,6 +61,7 @@ export default {
 
   data() {
     return {
+      auth: Auth.state,
       email: "",
       password: "",
     };
@@ -69,8 +70,9 @@ export default {
     async login() {
       let success = await Auth.login(this.email, this.password);
       console.log("Rezultat prijave", success);
-      if (success == true) {
-        this.$router.push({ name: "events" });
+
+      if (success == undefined) {
+        this.$router.go();
       }
     },
   },
