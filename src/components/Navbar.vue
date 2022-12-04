@@ -27,7 +27,7 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/events">Events</router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="auth.authenticated">
             <router-link class="nav-link" to="/start_a_group"
               >Start a Group +</router-link
             >

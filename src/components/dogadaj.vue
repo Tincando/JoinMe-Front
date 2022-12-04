@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main hidden tr-1">
     <div class="container event text-start">
       <div class="flex row py-4">
         <div class="col">
@@ -32,6 +32,20 @@ import moment from "moment";
 export default {
   name: "dogadaj",
   props: ["info"],
+
+  mounted() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
+  },
 
   methods: {
     formatTime(t) {

@@ -6,8 +6,11 @@
     <div class="container-md">
       <h1>Details</h1>
       <p>{{ event.title }}</p>
-      <p>Friends going: {{ event.people }}/{{ event.limit }}</p>
-      <button class="btn btn-primary" @click="pat">Im going</button>
+      <div v-if="event.limit">
+        <p>Friends going: {{ event.people }}/{{ event.limit }}</p>
+
+        <button class="btn btn-primary" @click="pat">Im going</button>
+      </div>
     </div>
   </div>
 </template>

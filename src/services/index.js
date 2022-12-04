@@ -66,16 +66,27 @@ let Events = {
 
     let response = await Service.get("/posts", options);
     let events = response.data.map((doc) => {
-      return {
-        id: doc.id,
-        url: doc.source,
-        details: doc.createdBy,
-        title: doc.title,
-        city: doc.city,
-        posted_at: doc.postedAt,
-        limit: doc.limit,
-        people: doc.people,
-      };
+      if (doc.limit == 0) {
+        return {
+          id: doc.id,
+          url: doc.source,
+          details: doc.createdBy,
+          title: doc.title,
+          city: doc.city,
+          posted_at: doc.postedAt,
+        };
+      } else {
+        return {
+          id: doc.id,
+          url: doc.source,
+          details: doc.createdBy,
+          title: doc.title,
+          city: doc.city,
+          posted_at: doc.postedAt,
+          limit: doc.limit,
+          people: doc.people,
+        };
+      }
     });
     return events;
   },

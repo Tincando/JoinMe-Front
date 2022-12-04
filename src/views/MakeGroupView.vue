@@ -4,44 +4,70 @@
       <h1>Start a group:</h1>
     </div>
     <div class="container p-5">
-      <from>
+      <form @submit.prevent="postEvent">
         <div class="from-group">
           <div class="form-group">
-            <label for="createdby">Name:</label>
+            <label for="eventName">Name of the event:</label>
             <input
               class="form-control"
-              id="createdby"
+              id="eventName"
               type="text"
-              v-model="createdBy"
+              v-model="eventName"
+            />
+          </div>
+          <div class="form group">
+            <label for="form-select">Choose Category:</label>
+            <select class="form-select mb-3" v-model="category" required>
+              <option selected>Open this select menu</option>
+              <option value="Concert">Concert</option>
+              <option value="Theater">Theater</option>
+              <option value="Pub Quiz">Pub Quiz</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="city"
+              v-model="city"
+              required
             />
           </div>
           <div class="form-group">
-            <label for="city">City:</label>
-            <input class="form-control" type="text" id="city" v-model="city" />
-          </div>
-          <div class="form-group">
             <label for="source">Url slike: </label>
-            <input class="form-control" id="source" v-model="source" />
+            <input class="form-control" id="source" v-model="imgSource" />
           </div>
-          <div class="form-group">
-            <label for="title">Name of the event: </label>
-            <input class="form-control" id="title" v-model="title" />
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="true"
+              id="flexCheckDefault"
+              v-model="checkLim"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Limit the number of people
+            </label>
           </div>
-          <div class="form-group">
-            <label for="limit">Limit number of people: </label>
+
+          <div class="form-group" v-if="this.checkLim == true">
             <input
               class="form-control"
               type="number"
               id="limit"
               v-model="limit"
-              min="0"
+              min="1"
             />
           </div>
+
           <div class="form-group py-3">
-            <button class="btn btn-primary" @click="postEvent">Make</button>
+            <button class="btn btn-primary" type="submit">Make</button>
           </div>
         </div>
-      </from>
+      </form>
     </div>
   </div>
 </template>
@@ -53,25 +79,43 @@ export default {
   name: "start_a_group",
   data() {
     return {
-      createdBy: "",
-      source: "",
-      title: "",
+      checkLim: false,
+      category: "",
+      imgSource: "",
+      eventName: "",
       city: "",
-      limit: 0,
+      limit: 1,
+      user: JSON.parse(localStorage.getItem("user")).username,
     };
   },
 
   methods: {
     async postEvent() {
-      let post = {
-        createdBy: this.createdBy,
-        postedAt: new Date(),
-        source: this.source,
-        title: this.title,
-        city: this.city,
-        limit: this.limit,
-        people: 0,
-      };
+      let post;
+
+      if (this.checkLim == false) {
+        post = {
+          category: this.category,
+          createdBy: this.user,
+          postedAt: new Date(),
+          source: this.imgSource,
+          title: this.eventName,
+          city: this.city,
+          limit: 0,
+          people: 0,
+        };
+      } else {
+        post = {
+          category: this.category,
+          createdBy: this.user,
+          postedAt: new Date(),
+          source: this.imgSource,
+          title: this.eventName,
+          city: this.city,
+          limit: this.limit,
+          people: 0,
+        };
+      }
 
       let newpost = await Events.add(post);
       console.log("Spremljeni post", newpost.data);
