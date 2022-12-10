@@ -1,6 +1,7 @@
 <template>
   <div class="events">
-    <div class="container-md pt-5 pb-3">
+    <div class="spacer curve2"></div>
+    <div class="container-md pb-3">
       <h3 class="text-start">Events:</h3>
 
       <input

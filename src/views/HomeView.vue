@@ -2,7 +2,8 @@
   <div class="home">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" />-->
     <!--Main content-->
-    <div class="container pt-6 pb-5 hidden tr-1">
+    <div class="spacer curve2"></div>
+    <div class="container hidden tr-1">
       <div class="row">
         <div class="col">
           <h1 class="fw-bold">
@@ -23,123 +24,132 @@
         </div>
       </div>
     </div>
-    <hr />
-    <!-- Jos jedan section-->
-    <div class="container py-5">
-      <div class="row g-2">
-        <div class="col hidden tr-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Concerts</h5>
-              <img class="w-50 rounded" src="@/assets/concerts.png" />
-              <p class="card-text pt-3">
-                Looking for a concert? Look no further
-              </p>
-              <router-link to="/events" class="btn btn-warning"
-                >To Concerts</router-link
-              >
+
+    <div class="spacer curve1"></div>
+    <section class="yellow">
+      <div class="spacer curve2"></div>
+      <!-- Jos jedan section-->
+      <div class="container pb-5">
+        <div class="row">
+          <div class="col hidden tr-3">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Concerts</h5>
+                <img class="w-50 rounded" src="@/assets/concerts.png" />
+                <p class="card-text pt-3">
+                  Looking for a concert? Look no further
+                </p>
+                <router-link to="/events" class="btn btn-warning"
+                  >To Concerts</router-link
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col hidden tr-2">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Theater</h5>
-              <img class="w-50 rounded" src="@/assets/theater.png" />
-              <p class="card-text pt-3">
-                Looking for a theater event? Look no further
-              </p>
-              <router-link to="/events" class="btn btn-warning"
-                >To Theater</router-link
-              >
+          <div class="col hidden tr-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Theater</h5>
+                <img class="w-50 rounded" src="@/assets/theater.png" />
+                <p class="card-text pt-3">
+                  Looking for a theater event? Look no further
+                </p>
+                <router-link to="/events" class="btn btn-warning"
+                  >To Theater</router-link
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col hidden tr-1">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Pub</h5>
-              <img class="w-50 rounded" src="@/assets/pubs.png" />
-              <p class="card-text pt-3">
-                Looking for a Pub event? Look no further
-              </p>
-              <router-link to="/events" class="btn btn-warning"
-                >To Pubs</router-link
-              >
+          <div class="col hidden tr-1">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Pub</h5>
+                <img class="w-50 rounded" src="@/assets/pubs.png" />
+                <p class="card-text pt-3">
+                  Looking for a Pub event? Look no further
+                </p>
+                <router-link to="/events" class="btn btn-warning"
+                  >To Pubs</router-link
+                >
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <hr />
+      <div class="spacer curve2 flip"></div>
+    </section>
+
+    <div class="spacer curve1 flip mt-min1"></div>
     <!--How it works-->
-    <div class="container py-5">
-      <div class="container text-center">
-        <h1 class="fw-bold">How JoinMe works</h1>
-        <p class="pb-2">
-          You really like this band but none of your friends share your
-          enthusiasm? No problem we got you!
-        </p>
-        <div class="container">
-          <div class="row p-5">
-            <div class="col group hidden tr-3">
-              <div class="container py-4">
-                <img
-                  class="container w-50 rounded-circle"
-                  src="@/assets/startagroup.jpg"
-                />
+
+    <section>
+      <div class="container">
+        <div class="container text-center">
+          <h1 class="fw-bold">How JoinMe works</h1>
+          <p class="pb-2">
+            You really like this band but none of your friends share your
+            enthusiasm? No problem we got you!
+          </p>
+          <div class="container">
+            <div class="row p-5">
+              <div class="col group hidden tr-3">
+                <div class="container py-4">
+                  <img
+                    class="container w-50 rounded-circle"
+                    src="@/assets/startagroup.jpg"
+                  />
+                </div>
+                <div class="px-5">
+                  <h2 class="fw-bold">Join a group</h2>
+                  <p>
+                    Do what you like, with others who like it too, find your
+                    like-minded people. And the rest is history!
+                  </p>
+                </div>
               </div>
-              <div class="px-5">
-                <h2 class="fw-bold">Join a group</h2>
-                <p>
-                  Do what you like, with others who like it too, find your
-                  like-minded people. And the rest is history!
-                </p>
+              <div class="col hidden tr-2">
+                <div class="container py-4">
+                  <img
+                    class="container w-50 rounded-circle"
+                    src="@/assets/find_an_event.png"
+                  />
+                </div>
+                <div class="px-5">
+                  <h2 class="fw-bold">Find an event</h2>
+                  <p>
+                    Concert, shows, events are happening all the time find
+                    someone who has the same taste as you.
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="col hidden tr-2">
-              <div class="container py-4">
-                <img
-                  class="container w-50 rounded-circle"
-                  src="@/assets/find_an_event.png"
-                />
-              </div>
-              <div class="px-5">
-                <h2 class="fw-bold">Find an event</h2>
-                <p>
-                  Concert, shows, events are happening all the time find someone
-                  who has the same taste as you.
-                </p>
-              </div>
-            </div>
-            <div class="col group hidden tr-1">
-              <div class="container py-4">
-                <img
-                  class="container w-50 rounded-circle"
-                  src="@/assets/start_a_group.png"
-                />
-              </div>
-              <div class="px-5">
-                <h2 class="fw-bold">Start a group</h2>
-                <p>
-                  You don’t have to be an extrovert to find people to go with
-                  you.
-                </p>
+              <div class="col group hidden tr-1">
+                <div class="container py-4">
+                  <img
+                    class="container w-50 rounded-circle"
+                    src="@/assets/start_a_group.png"
+                  />
+                </div>
+                <div class="px-5">
+                  <h2 class="fw-bold">Start a group</h2>
+                  <p>
+                    You don’t have to be an extrovert to find people to go with
+                    you.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div v-if="!auth.authenticated">
+          <button
+            class="btn btn-lg btn-warning"
+            data-bs-toggle="modal"
+            data-bs-target="#SignupModal"
+          >
+            Join JoinMe
+          </button>
+        </div>
       </div>
-      <div v-if="!auth.authenticated">
-        <button
-          class="btn btn-lg btn-warning"
-          data-bs-toggle="modal"
-          data-bs-target="#SignupModal"
-        >
-          Join JoinMe
-        </button>
-      </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -182,5 +192,11 @@ export default {
 }
 .pt-6 {
   padding-top: 6rem !important;
+}
+.yellow {
+  background-color: #ffba08;
+}
+.mt-min1 {
+  margin-top: -2rem !important;
 }
 </style>

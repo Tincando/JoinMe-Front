@@ -13,6 +13,7 @@
             <h1>{{ info.title }}</h1>
             <p>{{ info.details }}</p>
             <p>{{ info.city }}</p>
+            <p>{{ info.category }}</p>
             <p>{{ info.id }}</p>
             <div v-if="info.limit">
               <p class="text-end">

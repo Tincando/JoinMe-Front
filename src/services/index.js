@@ -74,6 +74,7 @@ let Events = {
           title: doc.title,
           city: doc.city,
           posted_at: doc.postedAt,
+          category: doc.category,
         };
       } else {
         return {
@@ -85,6 +86,7 @@ let Events = {
           posted_at: doc.postedAt,
           limit: doc.limit,
           people: doc.people,
+          category: doc.category,
         };
       }
     });

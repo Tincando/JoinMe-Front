@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <div class="spacer curve2"></div>
     <div class="main-h1 py-4">
       <h1>Start a group:</h1>
     </div>

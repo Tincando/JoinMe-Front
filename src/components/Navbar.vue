@@ -1,6 +1,6 @@
 <template>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-custom navbar-text">
     <div class="container-fluid">
       <router-link class="nav-link" to="/"
         ><img src="" class="logo"
@@ -85,6 +85,13 @@ export default {
   <style>
 .logo {
   width: 60px;
+}
+.navbar-custom {
+  background-color: #6a040f;
+}
+
+.navbar-custom .navbar-text {
+  color: #ffba08 !important;
 }
 </style>
   

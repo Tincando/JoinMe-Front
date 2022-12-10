@@ -45,8 +45,8 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
 body {
-  background-image: url("@/assets/web_back1.jpg");
-  background-size: cover;
+  // background-image: url("@/assets/web_back1.jpg");
+  //background-size: cover;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -87,11 +87,36 @@ nav {
 
   a {
     font-weight: bold;
-    color: #303030;
+    color: #ffba08 !important;
 
     &.router-link-exact-active {
-      color: #bb200c;
+      color: #d00000 !important;
     }
   }
+}
+
+.spacer {
+  aspect-ratio: 960/300;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.curve1 {
+  background-image: url("@/assets/curve_2.svg");
+}
+.curve2 {
+  background-image: url("@/assets/curve_1.svg");
+}
+.curve3 {
+  background-image: url("@/assets/curve_3.svg");
+}
+.curve4 {
+  background-image: url("@/assets/curve4.svg");
+}
+
+.flip {
+  transform: rotate(180deg);
 }
 </style>
