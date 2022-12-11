@@ -115,8 +115,15 @@ nav {
 .curve4 {
   background-image: url("@/assets/curve4.svg");
 }
+.curve5 {
+  background-image: url("@/assets/curve5.svg");
+}
 
 .flip {
   transform: rotate(180deg);
+}
+
+.mt-min1 {
+  margin-top: -2rem !important;
 }
 </style>
