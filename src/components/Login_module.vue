@@ -8,8 +8,8 @@
   >
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <div class="modal-header border-0 bg-red">
+          <h5 class="modal-title text-yellow" id="exampleModalLabel">Login</h5>
           <button
             type="button"
             class="btn-close"
@@ -17,6 +17,7 @@
             aria-label="Close"
           ></button>
         </div>
+        <div class="spacer curve2"></div>
         <div class="modal-body">
           <form @submit.prevent="login">
             <div class="form-group">
@@ -45,9 +46,10 @@
                 required
               />
             </div>
-            <button class="btn btn-primary">Login</button>
+            <button class="btn btn-warning">Login</button>
           </form>
         </div>
+        <div class="spacer curve1"></div>
       </div>
     </div>
   </div>
@@ -78,4 +80,5 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+</style>

@@ -126,4 +126,11 @@ nav {
 .mt-min1 {
   margin-top: -2rem !important;
 }
+
+.bg-red {
+  background-color: #6a040f;
+}
+.text-yellow {
+  color: #ffba08;
+}
 </style>

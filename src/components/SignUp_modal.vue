@@ -8,8 +8,8 @@
   >
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="SignupmodalLabel">Sign up</h5>
+        <div class="modal-header border-0 bg-red">
+          <h5 class="modal-title text-yellow" id="SignupmodalLabel">Sign up</h5>
           <button
             type="button"
             class="btn-close"
@@ -17,6 +17,7 @@
             aria-label="Close"
           ></button>
         </div>
+        <div class="spacer curve2"></div>
         <div class="modal-body">
           <form>
             <div class="form-group">
@@ -72,9 +73,10 @@
                 placeholder="18-99"
               />
             </div>
-            <button @click="signup" class="btn btn-primary">Sign up</button>
+            <button @click="signup" class="btn btn-warning">Sign up</button>
           </form>
         </div>
+        <div class="spacer curve1"></div>
       </div>
     </div>
   </div>
