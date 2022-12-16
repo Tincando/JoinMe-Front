@@ -33,13 +33,13 @@
         <div class="row">
           <div class="col hidden tr-3">
             <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Concerts</h5>
+              <div class="card-body py-4">
+                <h5 class="card-title py-3 fw-bold">Concerts</h5>
                 <img class="w-50 rounded" src="@/assets/concerts.png" />
                 <p class="card-text pt-3">
                   Looking for a concert? Look no further
                 </p>
-                <router-link to="/events" class="btn btn-warning"
+                <router-link to="/events" class="btn btn-warning py-3"
                   >To Concerts</router-link
                 >
               </div>
@@ -47,13 +47,13 @@
           </div>
           <div class="col hidden tr-2">
             <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Theater</h5>
+              <div class="card-body py-4">
+                <h5 class="card-title py-3 fw-bold">Theater</h5>
                 <img class="w-50 rounded" src="@/assets/theater.png" />
                 <p class="card-text pt-3">
                   Looking for a theater event? Look no further
                 </p>
-                <router-link to="/events" class="btn btn-warning"
+                <router-link to="/events" class="btn btn-warning py-3"
                   >To Theater</router-link
                 >
               </div>
@@ -61,13 +61,13 @@
           </div>
           <div class="col hidden tr-1">
             <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Pub</h5>
+              <div class="card-body py-4">
+                <h5 class="card-title py-3 fw-bold">Pub</h5>
                 <img class="w-50 rounded" src="@/assets/pubs.png" />
                 <p class="card-text pt-3">
                   Looking for a Pub event? Look no further
                 </p>
-                <router-link to="/events" class="btn btn-warning"
+                <router-link to="/events" class="btn btn-warning py-3"
                   >To Pubs</router-link
                 >
               </div>
@@ -195,8 +195,5 @@ export default {
 }
 .yellow {
   background-color: #ffba08;
-}
-.mt-min1 {
-  margin-top: -2rem !important;
 }
 </style>

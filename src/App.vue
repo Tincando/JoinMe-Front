@@ -133,4 +133,8 @@ nav {
 .text-yellow {
   color: #ffba08;
 }
+
+.bg-yellow {
+  background-color: #6a040f;
+}
 </style>
