@@ -19,6 +19,9 @@
         </div>
         <div class="spacer curve2"></div>
         <div class="modal-body">
+          <div class="container pb-3">
+            <img class="logo" src="@/assets/logo.png" />
+          </div>
           <form>
             <div class="form-group">
               <label for="Name">Your Name</label>

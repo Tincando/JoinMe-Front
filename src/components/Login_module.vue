@@ -19,6 +19,9 @@
         </div>
         <div class="spacer curve2"></div>
         <div class="modal-body">
+          <div class="container pb-3">
+            <img class="logo" src="@/assets/logo.png" />
+          </div>
           <form @submit.prevent="login">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
@@ -81,4 +84,7 @@ export default {
 };
 </script>
 <style>
+.logo {
+  /* width: 80px;*/
+}
 </style>

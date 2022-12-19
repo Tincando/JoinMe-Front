@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg navbar-custom navbar-text">
     <div class="container-fluid">
       <router-link class="nav-link" to="/"
-        ><img src="" class="logo"
+        ><img src="@/assets/joinmelogo-right.png" class="logo"
       /></router-link>
       <button
         class="navbar-toggler"
@@ -84,14 +84,14 @@ export default {
   
   <style>
 .logo {
-  width: 60px;
+  width: 80px;
 }
 .navbar-custom {
   background-color: #6a040f;
 }
 
 .navbar-custom .navbar-text {
-  color: #ffba08 !important;
+  color: #ffba08;
 }
 </style>
   

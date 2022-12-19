@@ -29,14 +29,15 @@
     <section class="yellow">
       <div class="spacer curve2"></div>
       <!-- Jos jedan section-->
+
       <div class="container pb-5">
         <div class="row">
           <div class="col hidden tr-3">
-            <div class="card">
-              <div class="card-body py-4">
+            <div class="card shad">
+              <div class="container py-5">
                 <h5 class="card-title py-3 fw-bold">Concerts</h5>
                 <img class="w-50 rounded" src="@/assets/concerts.png" />
-                <p class="card-text pt-3">
+                <p class="card-text py-3">
                   Looking for a concert? Look no further
                 </p>
                 <router-link to="/events" class="btn btn-warning py-3"
@@ -46,11 +47,11 @@
             </div>
           </div>
           <div class="col hidden tr-2">
-            <div class="card">
-              <div class="card-body py-4">
+            <div class="card shad">
+              <div class="container py-5">
                 <h5 class="card-title py-3 fw-bold">Theater</h5>
                 <img class="w-50 rounded" src="@/assets/theater.png" />
-                <p class="card-text pt-3">
+                <p class="card-text py-3">
                   Looking for a theater event? Look no further
                 </p>
                 <router-link to="/events" class="btn btn-warning py-3"
@@ -60,11 +61,11 @@
             </div>
           </div>
           <div class="col hidden tr-1">
-            <div class="card">
-              <div class="card-body py-4">
+            <div class="card shad">
+              <div class="container py-5">
                 <h5 class="card-title py-3 fw-bold">Pub</h5>
                 <img class="w-50 rounded" src="@/assets/pubs.png" />
-                <p class="card-text pt-3">
+                <p class="card-text py-3">
                   Looking for a Pub event? Look no further
                 </p>
                 <router-link to="/events" class="btn btn-warning py-3"
@@ -91,7 +92,7 @@
           </p>
           <div class="container">
             <div class="row p-5">
-              <div class="col group hidden tr-3">
+              <div class="col group hidden tr-3 py-5">
                 <div class="container py-4">
                   <img
                     class="container w-50 rounded-circle"
@@ -106,7 +107,7 @@
                   </p>
                 </div>
               </div>
-              <div class="col hidden tr-2">
+              <div class="col hidden tr-2 py-5">
                 <div class="container py-4">
                   <img
                     class="container w-50 rounded-circle"
@@ -121,7 +122,7 @@
                   </p>
                 </div>
               </div>
-              <div class="col group hidden tr-1">
+              <div class="col group hidden tr-1 py-5">
                 <div class="container py-4">
                   <img
                     class="container w-50 rounded-circle"
@@ -193,7 +194,18 @@ export default {
 .pt-6 {
   padding-top: 6rem !important;
 }
+
+.py-8 {
+  padding-top: 8rem !important;
+  padding-bottom: 8rem !important;
+}
 .yellow {
   background-color: #ffba08;
+}
+
+.shad {
+  -webkit-box-shadow: 3px 14px 16px 2px rgba(106, 4, 15, 1);
+  -moz-box-shadow: 3px 14px 16px 2px rgba(106, 4, 15, 1);
+  box-shadow: 3px 14px 16px 2px rgba(106, 4, 15, 1);
 }
 </style>
