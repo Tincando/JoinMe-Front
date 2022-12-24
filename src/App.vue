@@ -126,6 +126,9 @@ nav {
 .mt-min1 {
   margin-top: -2rem !important;
 }
+.mt-min3 {
+  margin-top: -6rem !important;
+}
 
 .bg-red {
   background-color: #6a040f;

@@ -55,17 +55,41 @@
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">JoinMe</h6>
-            <p>
-              <a href="#!" class="text-reset">About</a>
+            <p class="text-reset">
+              <router-link class="text-reset" to="/">Home</router-link>
             </p>
             <p>
-              <a href="#!" class="text-reset">Login</a>
+              <router-link class="text-reset" to="/about">About</router-link>
             </p>
             <p>
-              <a href="#!" class="text-reset">Sign up</a>
+              <a
+                v-if="!auth.authenticated"
+                type="button"
+                class="text-reset"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                Login
+              </a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Make a group</a>
+              <a
+                v-if="!auth.authenticated"
+                type="button"
+                class="text-reset"
+                data-bs-toggle="modal"
+                data-bs-target="#SignupModal"
+              >
+                Sign up
+              </a>
+            </p>
+            <p v-if="auth.authenticated">
+              <router-link class="text-reset" to="/start_a_group"
+                >Make a group</router-link
+              >
+            </p>
+            <p v-if="auth.authenticated">
+              <a @click="logout" type="button" class="text-reset"> Logout </a>
             </p>
           </div>
           <!-- Grid column -->
@@ -112,8 +136,20 @@
 </template>
 
 <script>
+import { Auth } from "@/services";
+
 export default {
   name: "Footer",
+  data() {
+    return { auth: Auth.state };
+  },
+
+  methods: {
+    logout() {
+      Auth.logout();
+      this.$router.go();
+    },
+  },
 };
 </script>
 
