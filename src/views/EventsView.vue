@@ -138,7 +138,7 @@ export default {
 };
 </script>
 
-<style>
+<style  >
 .form-select {
   background-color: #ebe9e9d8;
 }
