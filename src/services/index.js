@@ -53,6 +53,7 @@ let Events = {
       limit: doc.limit,
       people: doc.people,
       category: doc.category,
+      city: doc.city,
     };
   },
 
