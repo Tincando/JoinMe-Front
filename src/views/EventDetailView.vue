@@ -2,22 +2,39 @@
   <div v-if="event">
     <div class="spacer curve2"></div>
     <div class="container-fluid mt-min3">
-      <div class="title d-flex justify-content-start">
-        <h1 class="fw-bold text-uppercase">{{ event.title }}</h1>
-      </div>
-      <div class="subtitle d-flex justify-content-start">
-        <p>Created by:</p>
-        <p class="fw-bold">{{ event.email }}</p>
-      </div>
-      <hr class="pb-5" />
-      <section class="container-fluid bg-light p-5">
+      <section class="title-section px-5">
+        <div class="title d-flex justify-content-start">
+          <h1 class="fw-bold text-uppercase">{{ event.title }}</h1>
+        </div>
+        <div class="subtitle d-flex justify-content-start">
+          <p>Created by:</p>
+          <p class="fw-bold">{{ event.email }}</p>
+        </div>
+
+        <hr class="pb-5" />
+      </section>
+      <section class="content px-5">
         <div class="row">
-          <div class="col-sm-8">
-            <div class="container">
-              <img class="img" :src="event.url" />
+          <div class="col-9">
+            <div class="container d-flex align-items-start">
+              <img class="title-img img-fluid rounded" :src="event.url" />
             </div>
-            <div class="container-md">
-              <h1>Details</h1>
+            <div class="container text-start p-3">
+              <h4 class="fw-bold">Details</h4>
+              <p>
+                "The Imaginary Band" is performing at the "Fantasy Theater"
+                tomorrow night at 8:00 PM. The show is a high-energy, upbeat
+                performance featuring a mix of original songs and covers from a
+                variety of musical genres. The lead singer, "Jade," has a
+                powerful voice and is known for her dynamic stage presence. The
+                band also features a talented group of musicians on guitar,
+                bass, drums, and keyboards. Tickets for the show are available
+                now through the theater's website or by calling the box office.
+                Prices range from $25 to $50, depending on the seating location.
+                There will also be a limited number of VIP tickets available,
+                which include a meet-and-greet with the band and access to a
+                special VIP lounge during the show.
+              </p>
               <p>{{ event.title }}</p>
               <div v-if="event.limit">
                 <p>Friends going: {{ event.people }}/{{ event.limit }}</p>
@@ -26,8 +43,8 @@
               </div>
             </div>
           </div>
-          <div class="col-4">
-            <div class="container-sm bg-white border">
+          <div class="col-md-3">
+            <div class="container-sm bg-white border rounded">
               <p>{{ event.category }}</p>
               <p>{{ event.posted_at }}</p>
             </div>
@@ -75,5 +92,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.title-img {
+  width: 900px;
+  height: 450px;
+}
 </style>

@@ -49,9 +49,10 @@ let Events = {
       url: doc.source,
       email: doc.createdBy,
       title: doc.title,
-      posted_at: Number(doc.postedAt),
+      posted_at: doc.postedAt,
       limit: doc.limit,
       people: doc.people,
+      category: doc.category,
     };
   },
 
