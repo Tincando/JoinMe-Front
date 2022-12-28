@@ -2,7 +2,7 @@
   <div class="about">
     <div class="spacer curve2"></div>
     <div class="container-md">
-      <h1>We are who we are</h1>
+      <h1>With JoinMe, you'll never have to go to an event alone again.</h1>
       <section>
         <div class="container-md">
           <svg
@@ -35,20 +35,57 @@
           </svg>
         </div>
       </section>
-      <h1>And we are proud of it</h1>
+      <h1>Start exploring and connecting with others today!</h1>
     </div>
     <div class="spacer curve2 flip"></div>
   </div>
 
-  <div class="">
-    <div class="container-fluid py-5">
-      <h2>Join JoniMe and lets have fun together!!!</h2>
-      <h3>Because fun never stops</h3>
+  <section class="py-2">
+    <div class="container border rounded py-5">
+      <h5>
+        Welcome to JoinMe the ultimate platform for finding and connecting with
+        like-minded individuals who want to attend events together.<br />Whether
+        you're a solo traveler looking for companionship at a music festival, a
+        sports fan seeking a group to watch the big game with, or just someone
+        who doesn't want to go to events alone, JoinMe has you covered.
+      </h5>
     </div>
-    <div class="container-fluid company">
-      <h1>What are you waiting for?!</h1>
+    <div class="container text-start p-3 mt-min3">
+      <img class="img-fluid" src="@/assets/mic.png" />
     </div>
-  </div>
+    <div
+      class="
+        bg-image
+        shadow-1-strong
+        text-white
+        company
+        d-flex
+        justify-content-center
+        align-items-center
+      "
+    >
+      <h1 class="">
+        From music festivals and sporting events to theater performances and
+        more, we've got you covered.
+      </h1>
+    </div>
+    <div class="container py-5">
+      <h5>
+        Our mission is to make it easy for people with shared interests to find
+        each other and plan to attend events together. We offer a variety of
+        tools and features to help you find and connect with potential event
+        buddies, including personalized recommendations, group messaging, and
+        the ability to create and join events-based communities.
+      </h5>
+    </div>
+    <div class="container p-5 border rounded">
+      <h3>"Because fun never stops"</h3>
+      <p class="fst-italic">-Nikola Tesla-</p>
+    </div>
+    <div class="container text-end p-3 mt-min3">
+      <img class="img-fluid" src="@/assets/nT.png" />
+    </div>
+  </section>
   <!--boje odabrane su 1.#ffba08 i 2.#6a040f  -->
 </template>
 
@@ -76,13 +113,10 @@ h1 {
 .about {
   background-color: #ffba08;
 }
-.bg-yellow {
-  background-color: #6a040f;
-}
+
 .company {
-  height: 500px;
-  background-image: url(@/assets/concert.jpg);
-  background-repeat: no-repeat;
-  background-size: fill;
+  background-image: url(@/assets/concert-about.jpg);
+  background-position: center;
+  height: 100vh;
 }
 </style>

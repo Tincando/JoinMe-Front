@@ -15,7 +15,7 @@
             day—join the fun and make new friends.
           </p>
         </div>
-        <div class="col">
+        <div class="col-md">
           <img
             src="@/assets/people.jpg"
             class="img-fluid rounded"
