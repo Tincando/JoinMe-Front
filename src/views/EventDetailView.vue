@@ -2,7 +2,7 @@
   <div class="main" v-if="event">
     <div class="spacer curve2"></div>
     <div class="mt-min3">
-      <section class="title-section px-5 border-bottom border-3">
+      <section class="title-section px-5 border-bottom border-3 border-grey">
         <div class="title d-flex justify-content-start">
           <h1 class="fw-bold text-uppercase">{{ event.title }}</h1>
         </div>
@@ -15,7 +15,10 @@
         <div class="row">
           <div class="col-9">
             <div class="container d-flex align-items-start">
-              <img class="title-img img-fluid rounded" :src="event.url" />
+              <img
+                class="shadow title-img img-fluid rounded"
+                :src="event.url"
+              />
             </div>
             <div class="container text-start py-4">
               <h4 class="fw-bold">Details</h4>
@@ -77,9 +80,42 @@
 
     <section class="content">
       <div class="container rounded bg-white">
-        <h1>Text:</h1>
-        <p>Type here:</p>
-        <p>Start of the conversation</p>
+        <form>
+          <div class="form-group py-5">
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="5"
+              placeholder="What are your thoughts?"
+            ></textarea>
+            <div class="pt-2 text-end">
+              <button class="btn btn-primary">Comment</button>
+            </div>
+          </div>
+        </form>
+        <hr />
+        <div class="p-5">
+          <div class="text-start">
+            <div class="d-flex">
+              <img
+                class="profil img-thumbnail rounded-circle"
+                src="@/assets/nT.png"
+              />
+              <p class="fw-bold p-3">User1234</p>
+            </div>
+            <p>It will be amazing!!!</p>
+          </div>
+          <div class="reply text-start p-3">
+            <div class="d-flex">
+              <img
+                class="profil img-thumbnail rounded-circle"
+                src="@/assets/mic.png"
+              />
+              <p class="fw-bold p-3">UserKing</p>
+            </div>
+            <p>I can't wait! :)</p>
+          </div>
+        </div>
       </div>
     </section>
   </div>
@@ -142,5 +178,14 @@ export default {
 .title-img {
   width: 900px;
   height: 450px;
+}
+
+.border-grey {
+  border-color: rgba(155, 155, 155, 0.466) !important;
+}
+
+.profil {
+  width: 50px;
+  height: 50px;
 }
 </style>
