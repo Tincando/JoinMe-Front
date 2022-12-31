@@ -8,7 +8,7 @@
         </div>
         <div class="subtitle d-flex justify-content-start">
           <p>Created by:</p>
-          <p class="fw-bold">{{ event.email }}</p>
+          <p class="fw-bold">{{ event.createdBy }}</p>
         </div>
       </section>
       <section class="content px-5 py-4">
@@ -17,7 +17,7 @@
             <div class="container d-flex align-items-start">
               <img
                 class="shadow title-img img-fluid rounded"
-                :src="event.url"
+                :src="event.source"
               />
             </div>
             <div class="container text-start py-4">
@@ -124,24 +124,31 @@
 <script>
 import dogadaj from "@/components/dogadaj.vue";
 import store from "@/store.js";
-import { Events } from "@/services";
 import moment from "moment";
 
 export default {
   props: ["id"],
   data() {
     return {
+      events: store.eventi,
+      id: this.$route.params.id,
       event: null,
     };
   },
-  async mounted() {
-    this.event = await Events.getOne(this.id);
+  mounted() {
+    this.getOne();
   },
   name: "event-details",
   components: {
     dogadaj,
   },
   methods: {
+    getOne() {
+      for (event of this.events) {
+        if (this.id == event.id) this.event = event;
+      }
+    },
+
     formatTime(t) {
       return moment(t).format("MMMM Do YYYY, h:mm:ss a");
     },

@@ -27,7 +27,7 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/events">Events</router-link>
           </li>
-          <li class="nav-item" v-if="auth.authenticated">
+          <li class="nav-item">
             <router-link class="nav-link" to="/start_a_group"
               >Start a Group +</router-link
             >
@@ -39,7 +39,6 @@
             <a @click="logout" type="button" class="nav-link"> Logout </a>
           </div>
           <a
-            v-if="!auth.authenticated"
             type="button"
             class="nav-link"
             data-bs-toggle="modal"
@@ -48,7 +47,6 @@
             Login
           </a>
           <a
-            v-if="!auth.authenticated"
             type="button"
             class="nav-link"
             data-bs-toggle="modal"

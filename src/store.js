@@ -1,4 +1,52 @@
 export default {
   newUrl: "",
   searchTerm: "",
+  eventi: [
+    {
+      id: "638f6fb217cd7ade9cf65ce5",
+      category: "Concert",
+      createdBy: "mato@gmail.com",
+      postedAt: "2022-12-06T16:37:06.696Z",
+      source:
+        "https://i.scdn.co/image/ab6761610000e5ebaff13c9484fdad590ccfb73c",
+      title: "Depeche mode",
+      city: "Rijeka",
+      limit: 5,
+      people: 0,
+    },
+    {
+      id: "638c87dfe8a1cf84bea586a5354",
+      category: "Other",
+      createdBy: "ivo@gmail.com",
+      postedAt: "2022-31-01T11:43:27.141Z",
+      source: "https://c.tadst.com/gfx/750w/newyearindia2010.jpg",
+      title: "Proslava Nove godine",
+      city: "Poreč",
+      limit: 20,
+      people: 13,
+    },
+    {
+      id: "638c87dfe8a1cf84bea896a5hz",
+      category: "Theater",
+      createdBy: "josipa@gmail.com",
+      postedAt: "2022-12-04T11:43:27.141Z",
+      source: "https://opera.hr/images/articles/x_Ljubizlo.png",
+      title: "Ljubav i Zloba, Vatroslav Lisinski",
+      city: "Zagreb",
+      limit: 0,
+      people: 0,
+    },
+    {
+      id: "638c87dfe8a1cf84bea586g1q",
+      category: "Pub Quiz",
+      createdBy: "Marko@gmail.com",
+      postedAt: "2022-13-04T09:45:27.141Z",
+      source:
+        "https://i2-prod.bristolpost.co.uk/article4093307.ece/ALTERNATES/s1200/0_Pub-quiz-USEJPG.jpg",
+      title: "Pubquiz u Shipyard-u",
+      city: "Pula",
+      limit: 10,
+      people: 3,
+    },
+  ],
 };

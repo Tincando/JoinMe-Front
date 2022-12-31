@@ -54,23 +54,6 @@
       </div>
       <hr />
     </div>
-    <div class="container event text-start">
-      <div class="flex row py-4">
-        <div class="col">
-          <div class="d-flex justify-content-center">
-            <img class="concert rounded img-fluid" src="@/assets/concert.jpg" />
-          </div>
-        </div>
-        <div class="col-7">
-          <div class="container-fluid">
-            <h2>FRI, NOV 11, 5:00 PM CET</h2>
-            <h1>LED ZEPELLIN CONCERT</h1>
-            <p>I'm looking for someone to go to the concert with :)</p>
-            <p class="text-end">0/10</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div :key="event.id" v-for="event in events">
       <router-link :to="{ name: 'event-details', params: { id: event.id } }">
@@ -83,7 +66,7 @@
 <script>
 import store from "@/store.js";
 import _ from "lodash";
-import { Events } from "@/services";
+//import { Events } from "@/services";
 import dogadaj from "@/components/dogadaj.vue";
 
 export default {
@@ -91,23 +74,20 @@ export default {
   data() {
     return {
       store,
-      events: [],
+
+      events: store.eventi,
       term: "",
     };
   },
   components: {
     dogadaj,
   },
-  watch: {
-    "store.searchTerm": _.debounce(function (val) {
-      this.fetchPosts(val);
-    }, 500),
-  },
+  watch: {},
 
   methods: {
     async fetchPosts(term) {
       term = term || store.searchTerm;
-      this.events = await Events.getAll(term);
+      this.events = await store.eventi.getAll(term);
       /*
       fetch(`http://localhost:3000/posts?city=${this.term} `)
         .then((response) => {
@@ -132,9 +112,7 @@ export default {
     },
   },
 
-  created() {
-    this.fetchPosts();
-  },
+  created() {},
 };
 </script>
 

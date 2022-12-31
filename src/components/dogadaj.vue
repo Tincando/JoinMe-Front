@@ -4,7 +4,7 @@
       <div class="flex row py-4">
         <div class="col">
           <div class="d-flex justify-content-center">
-            <img class="concert rounded img-fluid" :src="info.url" />
+            <img class="concert rounded img-fluid" :src="info.source" />
           </div>
         </div>
         <div class="col-7">
@@ -14,7 +14,7 @@
             <p>{{ info.details }}</p>
             <p>{{ info.city }}</p>
             <p>{{ info.category }}</p>
-            <p>{{ info.id }}</p>
+
             <div v-if="info.limit">
               <p class="text-end">
                 Friends going: {{ info.people }}/{{ info.limit }}

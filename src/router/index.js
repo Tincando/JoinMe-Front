@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import { Auth } from "@/services";
 
 const routes = [
   {
@@ -52,19 +51,6 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-});
-
-// izvrši prije svake rute
-router.beforeEach((to, from, next) => {
-  // redirect to login page if not logged in and trying to access a restricted page;
-  const publicPages = ["/", "/about", "/login", "/signup", "/events"];
-  const authRequired = !publicPages.includes(to.path);
-  const user = Auth.getUser();
-  //ako je potreban login, ali nema korisnika
-  if (authRequired && !user) {
-    return next("/");
-  }
-  next();
 });
 
 export default router;

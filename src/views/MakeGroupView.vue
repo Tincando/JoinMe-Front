@@ -86,43 +86,10 @@ export default {
       eventName: "",
       city: "",
       limit: 1,
-      user: JSON.parse(localStorage.getItem("user")).username,
     };
   },
 
-  methods: {
-    async postEvent() {
-      let post;
-
-      if (this.checkLim == false) {
-        post = {
-          category: this.category,
-          createdBy: this.user,
-          postedAt: new Date(),
-          source: this.imgSource,
-          title: this.eventName,
-          city: this.city,
-          limit: 0,
-          people: 0,
-        };
-      } else {
-        post = {
-          category: this.category,
-          createdBy: this.user,
-          postedAt: new Date(),
-          source: this.imgSource,
-          title: this.eventName,
-          city: this.city,
-          limit: this.limit,
-          people: 0,
-        };
-      }
-
-      let newpost = await Events.add(post);
-      console.log("Spremljeni post", newpost.data);
-      this.$router.push({ name: "events" });
-    },
-  },
+  methods: {},
 };
 </script>
 
