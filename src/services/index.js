@@ -57,16 +57,59 @@ let Events = {
     };
   },
 
-  async getAll(searchTerm) {
+  async getAll(searchTerm, category, day, age) {
     let options = {};
 
-    if (searchTerm) {
+    if (searchTerm || category || day || age) {
       options.params = {
-        _any: searchTerm,
+        _city: searchTerm,
+        _category: category,
+        _day: day,
+        _age: age,
       };
     }
 
-    let response = await Service.get("/posts", options);
+    let response = await Service.get("/events", options);
+
+    let events = response.data.map((doc) => {
+      if (doc.limit == 0) {
+        return {
+          id: doc.id,
+          url: doc.source,
+          details: doc.createdBy,
+          title: doc.title,
+          city: doc.city,
+          posted_at: doc.postedAt,
+          category: doc.category,
+        };
+      } else {
+        return {
+          id: doc.id,
+          url: doc.source,
+          details: doc.createdBy,
+          title: doc.title,
+          city: doc.city,
+          posted_at: doc.postedAt,
+          limit: doc.limit,
+          people: doc.people,
+          category: doc.category,
+        };
+      }
+    });
+    return events;
+  },
+
+  async gettag(category) {
+    let options = {};
+
+    if (category) {
+      options.params = {
+        _category: category,
+      };
+    }
+
+    let response = await Service.get("/events", options);
+
     let events = response.data.map((doc) => {
       if (doc.limit == 0) {
         return {

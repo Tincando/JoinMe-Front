@@ -18,20 +18,22 @@
             <select
               class="form-select rounded-pill"
               aria-label="Default select example"
+              v-model="store.category_tag"
             >
-              <option selected>Category</option>
-              <option value="Theater">Theater</option>
-              <option value="Concert">Concerts</option>
-              <option value="Pub">Pub</option>
-              <option value="NewYear">NewYear</option>
+              <option value="" disabled>Category</option>
+              <option value="theater">Theater</option>
+              <option value="concert">Concerts</option>
+              <option value="pub">Pub</option>
+              <option value="other">Other</option>
             </select>
           </div>
           <div class="col">
             <select
               class="form-select rounded-pill"
               aria-label="Default select example"
+              v-model="store.day_tag"
             >
-              <option selected>Any day</option>
+              <option disabled value="">Any day</option>
               <option value="soon">Starting soon</option>
               <option value="today">Today</option>
               <option value="tomorrow">Tomorrow</option>
@@ -42,13 +44,17 @@
             <select
               class="form-select rounded-pill"
               aria-label="Default select example"
+              v-model="store.age_tag"
             >
-              <option selected>Ages 0-99</option>
+              <option disabled value="">Ages 0-99</option>
               <option value="18">18-30</option>
               <option value="30">30-40</option>
               <option value="50">50-60</option>
               <option value="60">60+</option>
             </select>
+          </div>
+          <div class="col">
+            <button class="btn btn-primary" @click="filterPosts">filter</button>
           </div>
         </div>
       </div>
@@ -99,15 +105,17 @@ export default {
     dogadaj,
   },
   watch: {
-    "store.searchTerm": _.debounce(function (val) {
-      this.fetchPosts(val);
+    "store.searchTerm": _.debounce(function (term) {
+      this.fetchPosts(term);
     }, 500),
   },
 
   methods: {
     async fetchPosts(term) {
       term = term || store.searchTerm;
+
       this.events = await Events.getAll(term);
+
       /*
       fetch(`http://localhost:3000/posts?city=${this.term} `)
         .then((response) => {
@@ -129,6 +137,14 @@ export default {
 
        
         */
+    },
+    async filterPosts(term, category, day, age) {
+      term = store.searchTerm;
+      category = store.category_tag || this.category;
+      day = store.day_tag;
+      age = store.age_tag;
+
+      this.events = await Events.getAll(term, category, day, age);
     },
   },
 

@@ -54,7 +54,7 @@
                 <p class="card-text py-3">
                   Looking for a theater event? Look no further
                 </p>
-                <router-link to="/events" class="btn btn-warning py-3"
+                <router-link to="events" class="btn btn-warning py-3"
                   >To Theater</router-link
                 >
               </div>

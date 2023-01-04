@@ -16,6 +16,15 @@
               v-model="eventName"
             />
           </div>
+          <div class="form-group">
+            <label for="details">Details:</label>
+            <input
+              class="form-control"
+              id="details"
+              type="text"
+              v-model="details"
+            />
+          </div>
           <div class="form group">
             <label for="form-select">Choose Category:</label>
             <select class="form-select mb-3" v-model="category" required>

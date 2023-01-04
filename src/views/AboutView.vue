@@ -40,7 +40,7 @@
     <div class="spacer curve2 flip"></div>
   </div>
 
-  <section class="py-2">
+  <section class="pt-5">
     <div class="container border rounded py-5">
       <h5>
         Welcome to JoinMe the ultimate platform for finding and connecting with
