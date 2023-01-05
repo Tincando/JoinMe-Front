@@ -17,18 +17,30 @@
             />
           </div>
           <div class="form-group">
-            <label for="details">Details:</label>
+            <label for="date">Date of the event:</label>
             <input
               class="form-control"
+              type="date"
+              id="date"
+              v-model="eventDate"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="details">Details:</label>
+            <textarea
+              class="form-control"
+              rows="5"
+              placeholder="Event details..."
               id="details"
               type="text"
               v-model="details"
-            />
+            ></textarea>
           </div>
           <div class="form group">
             <label for="form-select">Choose Category:</label>
             <select class="form-select mb-3" v-model="category" required>
-              <option selected>Open this select menu</option>
+              <option value="" disabled>Category</option>
               <option value="Concert">Concert</option>
               <option value="Theater">Theater</option>
               <option value="Pub Quiz">Pub Quiz</option>
@@ -47,7 +59,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="source">Url slike: </label>
+            <label for="source">Url image: </label>
             <input class="form-control" id="source" v-model="imgSource" />
           </div>
           <div class="form-check">
@@ -94,6 +106,8 @@ export default {
       imgSource: "",
       eventName: "",
       city: "",
+      details: "",
+      eventDate: "",
       limit: 1,
       user: JSON.parse(localStorage.getItem("user")).username,
     };
@@ -111,6 +125,8 @@ export default {
           source: this.imgSource,
           title: this.eventName,
           city: this.city,
+          details: this.details,
+          eventDate: this.eventDate,
           limit: 0,
           people: 0,
         };
@@ -123,6 +139,9 @@ export default {
           title: this.eventName,
           city: this.city,
           limit: this.limit,
+          details: this.details,
+          eventDate: this.eventDate,
+
           people: 0,
         };
       }

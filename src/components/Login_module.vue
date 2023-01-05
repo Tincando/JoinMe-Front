@@ -84,7 +84,4 @@ export default {
 };
 </script>
 <style>
-.logo {
-  /* width: 80px;*/
-}
 </style>

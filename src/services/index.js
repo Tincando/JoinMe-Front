@@ -54,6 +54,8 @@ let Events = {
       people: doc.people,
       category: doc.category,
       city: doc.city,
+      details: doc.details,
+      eventDate: doc.eventDate,
     };
   },
 
@@ -81,6 +83,7 @@ let Events = {
           city: doc.city,
           posted_at: doc.postedAt,
           category: doc.category,
+          eventDate: doc.eventDate,
         };
       } else {
         return {
@@ -93,45 +96,7 @@ let Events = {
           limit: doc.limit,
           people: doc.people,
           category: doc.category,
-        };
-      }
-    });
-    return events;
-  },
-
-  async gettag(category) {
-    let options = {};
-
-    if (category) {
-      options.params = {
-        _category: category,
-      };
-    }
-
-    let response = await Service.get("/events", options);
-
-    let events = response.data.map((doc) => {
-      if (doc.limit == 0) {
-        return {
-          id: doc.id,
-          url: doc.source,
-          details: doc.createdBy,
-          title: doc.title,
-          city: doc.city,
-          posted_at: doc.postedAt,
-          category: doc.category,
-        };
-      } else {
-        return {
-          id: doc.id,
-          url: doc.source,
-          details: doc.createdBy,
-          title: doc.title,
-          city: doc.city,
-          posted_at: doc.postedAt,
-          limit: doc.limit,
-          people: doc.people,
-          category: doc.category,
+          eventDate: doc.eventDate,
         };
       }
     });

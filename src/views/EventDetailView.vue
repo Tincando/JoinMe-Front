@@ -24,18 +24,7 @@
               <h4 class="fw-bold">Details</h4>
               <div class="container p-4">
                 <p>
-                  The Imaginary Band" is performing at the "Fantasy Theater"
-                  tomorrow night at 8:00 PM. The show is a high-energy, upbeat
-                  performance featuring a mix of original songs and covers from
-                  a variety of musical genres. The lead singer, "Jade," has a
-                  powerful voice and is known for her dynamic stage presence.
-                  The band also features a talented group of musicians on
-                  guitar, bass, drums, and keyboards. Tickets for the show are
-                  available now through the theater's website or by calling the
-                  box office. Prices range from $25 to $50, depending on the
-                  seating location. There will also be a limited number of VIP
-                  tickets available, which include a meet-and-greet with the
-                  band and access to a special VIP lounge during the show.
+                  {{ event.details }}
                 </p>
               </div>
 
@@ -54,7 +43,7 @@
                   </div>
                   <div class="col d-flex justify-content-center">
                     <div class="tag rounded-pill border px-4 py-3 fw-bold">
-                      {{ formatTime2(event.posted_at) }}
+                      {{ formatTime2(event.eventDate) }}
                     </div>
                   </div>
                 </div>
@@ -70,7 +59,7 @@
           <div class="col-md-3">
             <div class="container-sm bg-white border rounded">
               <p>{{ event.category }}</p>
-              <p>{{ formatTime(event.posted_at) }}</p>
+              <p>{{ formatTime(event.eventDate) }}</p>
             </div>
           </div>
         </div>

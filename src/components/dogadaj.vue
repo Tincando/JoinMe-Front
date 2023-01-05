@@ -9,12 +9,12 @@
         </div>
         <div class="col-7">
           <div class="container-fluid">
-            <h2>{{ formatTime(info.posted_at) }}</h2>
+            <h2>{{ formatTime(info.eventDate) }}</h2>
             <h1>{{ info.title }}</h1>
             <p>{{ info.details }}</p>
             <p>{{ info.city }}</p>
             <p>{{ info.category }}</p>
-            <p>{{ info.id }}</p>
+            <p>Posted {{ formatTime2(info.posted_at) }}</p>
             <div v-if="info.limit">
               <p class="text-end">
                 Friends going: {{ info.people }}/{{ info.limit }}
@@ -50,7 +50,10 @@ export default {
 
   methods: {
     formatTime(t) {
-      return moment(t).format("MMMM Do YYYY, h:mm:ss a");
+      return moment(t).format("MMM Do YY");
+    },
+    formatTime2(t) {
+      return moment(t).calendar();
     },
   },
 };
