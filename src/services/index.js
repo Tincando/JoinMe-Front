@@ -104,6 +104,12 @@ let Events = {
   },
 };
 
+let Chat = {
+  add(chat) {
+    return Service.post("/chat", chat);
+  },
+};
+
 let Auth = {
   // primamo user/pass, šaljemo upit na backend i ako dobijemo token
   // spremimao ga u "localStorage" - JavaScript memoriju koja OSTAJE
@@ -161,4 +167,4 @@ let User = {
   },
 };
 
-export { Service, Events, Auth, User };
+export { Service, Events, Auth, User, Chat };

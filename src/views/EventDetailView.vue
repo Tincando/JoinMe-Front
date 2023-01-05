@@ -76,9 +76,10 @@
               id="exampleFormControlTextarea1"
               rows="5"
               placeholder="What are your thoughts?"
+              v-model="chat"
             ></textarea>
             <div class="pt-2 text-end">
-              <button class="btn btn-primary">Comment</button>
+              <button class="btn btn-primary" @click="postchat">Comment</button>
             </div>
           </div>
         </form>
@@ -114,6 +115,7 @@
 import dogadaj from "@/components/dogadaj.vue";
 import store from "@/store.js";
 import { Events } from "@/services";
+import { Chat } from "@/services";
 import moment from "moment";
 
 export default {
@@ -121,6 +123,8 @@ export default {
   data() {
     return {
       event: null,
+      chat: this.chat,
+      user: JSON.parse(localStorage.getItem("user")).username,
     };
   },
   async mounted() {
@@ -150,6 +154,19 @@ export default {
       } else {
         alert("Group is full, I'm sorry");
       }
+    },
+
+    async postchat() {
+      let chat;
+
+      chat = {
+        chat: this.chat,
+        user: this.user,
+      };
+
+      let newchat = await Chat.add(chat);
+      console.log("Spremljeni post", newchat.data);
+      this.$router.push({ name: "events" });
     },
   },
 };
