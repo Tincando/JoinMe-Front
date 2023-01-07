@@ -76,7 +76,7 @@
               id="exampleFormControlTextarea1"
               rows="5"
               placeholder="What are your thoughts?"
-              v-model="chat"
+              v-model="comment"
             ></textarea>
             <div class="pt-2 text-end">
               <button class="btn btn-primary" @click="postchat">Comment</button>
@@ -84,6 +84,9 @@
           </div>
         </form>
         <hr />
+        <div :key="comment.id" v-for="comment in comments">
+          <comment :info="comment"></comment>
+        </div>
         <div class="p-5">
           <div class="text-start">
             <div class="d-flex">
@@ -117,22 +120,26 @@ import store from "@/store.js";
 import { Events } from "@/services";
 import { Chat } from "@/services";
 import moment from "moment";
+import comment from "@/components/comment.vue";
 
 export default {
   props: ["id"],
   data() {
     return {
       event: null,
-      chat: this.chat,
+      comment: this.comment,
       user: JSON.parse(localStorage.getItem("user")).username,
+      comments: [],
     };
   },
   async mounted() {
     this.event = await Events.getOne(this.id);
+    this.comments = await Chat.getAll(this.id);
   },
   name: "event-details",
   components: {
     dogadaj,
+    comment,
   },
   methods: {
     formatTime(t) {
@@ -160,8 +167,9 @@ export default {
       let chat;
 
       chat = {
-        chat: this.chat,
+        comment: this.comment,
         user: this.user,
+        event_id: this.event.id,
       };
 
       let newchat = await Chat.add(chat);
@@ -184,6 +192,13 @@ export default {
 .title-img {
   width: 900px;
   height: 450px;
+}
+
+@media (max-width: 767px) {
+  .title-img {
+    width: 500px;
+    height: 150px;
+  }
 }
 
 .border-grey {

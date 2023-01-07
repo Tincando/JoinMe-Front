@@ -104,12 +104,6 @@ let Events = {
   },
 };
 
-let Chat = {
-  add(chat) {
-    return Service.post("/chat", chat);
-  },
-};
-
 let Auth = {
   // primamo user/pass, šaljemo upit na backend i ako dobijemo token
   // spremimao ga u "localStorage" - JavaScript memoriju koja OSTAJE
@@ -165,6 +159,43 @@ let User = {
   async signup(newuser) {
     return Service.post("/user", newuser);
   },
+};
+
+let Chat = {
+  add(comment) {
+    return Service.post("/chat", comment);
+  },
+
+  async getAll(id) {
+    let response = await Service.get(`/chat/${id}`);
+
+    let chats = response.data.map((doc) => {
+      return {
+        comment: doc.comment,
+        user: doc.user,
+        event_id: doc.event_id,
+      };
+    });
+
+    return chats;
+  },
+
+  /*
+  async getAll(id) {
+
+    let response = await Service.get(`/chat/${id}`);
+
+    let chats = response.data.map((doc) => {
+      return {
+        comment: doc.comment,
+        user: doc.user,
+        event_id: doc.event_id,
+      };
+    });
+
+    return chats;
+  },
+  */
 };
 
 export { Service, Events, Auth, User, Chat };
