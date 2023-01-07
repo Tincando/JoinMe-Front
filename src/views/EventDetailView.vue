@@ -187,6 +187,12 @@ export default {
   height: 450px;
 }
 
+@media (max-width: 767px) {
+  .title-img {
+    width: 500px;
+    height: 150px;
+  }
+}
 .border-grey {
   border-color: rgba(155, 155, 155, 0.466) !important;
 }
