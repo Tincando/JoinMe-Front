@@ -36,6 +36,9 @@
 
         <ul class="navbar-nav mb-2 mb-lg-0">
           <div v-if="auth.authenticated">
+            <router-link class="nav-link" to="/myevents">My Events</router-link>
+          </div>
+          <div v-if="auth.authenticated">
             <a @click="logout" type="button" class="nav-link"> Logout </a>
           </div>
           <a

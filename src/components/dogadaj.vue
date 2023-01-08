@@ -4,7 +4,7 @@
       <div class="flex row py-4">
         <div class="col">
           <div class="d-flex justify-content-center">
-            <img class="concert rounded img-fluid" :src="info.url" />
+            <img class="concert rounded img-fluid shadow" :src="info.url" />
           </div>
         </div>
         <div class="col-7">

@@ -170,6 +170,7 @@ export default {
         comment: this.comment,
         user: this.user,
         event_id: this.event.id,
+        postedAt: new Date(),
       };
 
       let newchat = await Chat.add(chat);

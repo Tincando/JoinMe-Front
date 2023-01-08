@@ -39,6 +39,28 @@ let Events = {
     return Service.patch(`/event/${event._id}`, event);
   },
 
+  async Myevents(email) {
+    let response = await Service.get(`/myevents/${email}`);
+
+    let events = response.data.map((doc) => {
+      return {
+        id: doc._id,
+        url: doc.source,
+        email: doc.createdBy,
+        title: doc.title,
+        posted_at: doc.postedAt,
+        limit: doc.limit,
+        people: doc.people,
+        category: doc.category,
+        city: doc.city,
+        details: doc.details,
+        eventDate: doc.eventDate,
+      };
+    });
+
+    return events;
+  },
+
   async getOne(id) {
     let response = await Service.get(`/events/${id}`);
 
@@ -174,6 +196,7 @@ let Chat = {
         comment: doc.comment,
         user: doc.user,
         event_id: doc.event_id,
+        postedAt: doc.postedAt,
       };
     });
 
