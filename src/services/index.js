@@ -78,6 +78,7 @@ let Events = {
       city: doc.city,
       details: doc.details,
       eventDate: doc.eventDate,
+      going: doc.going,
     };
   },
 

@@ -110,6 +110,7 @@ export default {
       eventDate: "",
       limit: 1,
       user: JSON.parse(localStorage.getItem("user")).username,
+      going: [],
     };
   },
 
@@ -129,6 +130,7 @@ export default {
           eventDate: this.eventDate,
           limit: 0,
           people: 0,
+          going: [this.user],
         };
       } else {
         post = {
@@ -141,7 +143,7 @@ export default {
           limit: this.limit,
           details: this.details,
           eventDate: this.eventDate,
-
+          going: [this.user],
           people: 0,
         };
       }

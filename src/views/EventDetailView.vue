@@ -49,7 +49,7 @@
                 </div>
               </section>
 
-              <div v-if="event.limit">
+              <div class="text-center py-5" v-if="event.limit">
                 <p>Friends going: {{ event.people }}/{{ event.limit }}</p>
 
                 <button class="btn btn-primary" @click="pat">Im going</button>
@@ -62,11 +62,26 @@
               <p>{{ formatTime(event.eventDate) }}</p>
             </div>
           </div>
+          <section class="polaznici">
+            <div class="container-md">
+              <h1 class="text-start">Going:</h1>
+              <div class="row row-cols-3 py-5">
+                <div
+                  class="col container m-2 border rounded shadow bg-light"
+                  v-for="go in event.going"
+                  :key="go"
+                >
+                  <p>{{ go }}</p>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
         <hr />
       </section>
     </div>
 
+    <!--Komentari -->
     <section class="content">
       <div class="container rounded bg-white">
         <form>
@@ -154,6 +169,7 @@ export default {
         let doc = {
           _id: this.event.id,
           people: this.event.people + 1,
+          going: this.user,
         };
         let newpost = await Events.up(doc);
         console.log("Spremljeni post", newpost.data);
