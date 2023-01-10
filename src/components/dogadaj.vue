@@ -14,12 +14,13 @@
             <p>{{ info.details }}</p>
             <p>{{ info.city }}</p>
             <p>{{ info.category }}</p>
-            <p class="text-end">Posted {{ formatTime2(info.posted_at) }}</p>
+
             <div v-if="info.limit">
               <p class="text-end">
                 Friends going: {{ info.people }}/{{ info.limit }}
               </p>
             </div>
+            <p class="text-end">Posted {{ formatTime2(info.posted_at) }}</p>
           </div>
         </div>
       </div>

@@ -49,10 +49,13 @@
                 </div>
               </section>
 
-              <div class="text-center py-5" v-if="event.limit">
-                <p>Friends going: {{ event.people }}/{{ event.limit }}</p>
-
-                <button class="btn btn-primary" @click="pat">Im going</button>
+              <div class="text-center pt-5 pb-3" v-if="event.limit">
+                <p>People going: {{ event.people }}/{{ event.limit }}</p>
+              </div>
+              <div class="container text-center" v-if="this.exist == false">
+                <button class="btn btn-primary text-center" @click="pat">
+                  Im going
+                </button>
               </div>
             </div>
           </div>
@@ -145,12 +148,16 @@ export default {
       comment: this.comment,
       user: JSON.parse(localStorage.getItem("user")).username,
       comments: [],
+      exist: true,
     };
   },
+
   async mounted() {
     this.event = await Events.getOne(this.id);
     this.comments = await Chat.getAll(this.id);
+    this.userExists(this.user);
   },
+
   name: "event-details",
   components: {
     dogadaj,
@@ -165,7 +172,7 @@ export default {
     },
 
     async pat() {
-      if (this.event.people < this.event.limit) {
+      if (this.event.people < this.event.limit || !this.event.limit) {
         let doc = {
           _id: this.event.id,
           people: this.event.people + 1,
@@ -177,6 +184,17 @@ export default {
       } else {
         alert("Group is full, I'm sorry");
       }
+    },
+
+    userExists(x) {
+      let result = false;
+
+      for (const i of this.event.going) {
+        if (i == x) {
+          result = true;
+        }
+      }
+      this.exist = result;
     },
 
     async postchat() {
