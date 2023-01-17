@@ -13,74 +13,78 @@
       </section>
       <section class="content px-5 py-4">
         <div class="row">
-          <div class="col-9">
-            <div class="container d-flex align-items-start">
-              <img
-                class="shadow title-img img-fluid rounded"
-                :src="event.url"
-              />
-            </div>
-            <div class="container text-start py-4">
-              <h4 class="fw-bold">Details</h4>
-              <div class="container p-4">
-                <p>
-                  {{ event.details }}
-                </p>
+          <div class="row">
+            <div class="col-md-9 col-sm-12">
+              <div class="container d-flex align-items-start">
+                <img
+                  class="shadow title-img img-fluid rounded"
+                  :src="event.url"
+                />
               </div>
-
-              <section>
-                <h5>Tags:</h5>
-                <div class="row py-3">
-                  <div class="col d-flex justify-content-center">
-                    <div class="tag rounded-pill border px-4 py-3 fw-bold">
-                      {{ event.category }}
-                    </div>
-                  </div>
-                  <div class="col d-flex justify-content-center">
-                    <div class="tag rounded-pill border px-4 py-3 fw-bold">
-                      {{ event.city }}
-                    </div>
-                  </div>
-                  <div class="col d-flex justify-content-center">
-                    <div class="tag rounded-pill border px-4 py-3 fw-bold">
-                      {{ formatTime2(event.eventDate) }}
-                    </div>
-                  </div>
+              <div class="container text-start py-4">
+                <h4 class="fw-bold">Details</h4>
+                <div class="container p-4">
+                  <p>
+                    {{ event.details }}
+                  </p>
                 </div>
-              </section>
 
-              <div class="text-center pt-5 pb-3" v-if="event.limit">
-                <p>People going: {{ event.people }}/{{ event.limit }}</p>
-              </div>
-              <div class="container text-center" v-if="this.exist == false">
-                <button class="btn btn-primary text-center" @click="pat">
-                  Im going
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="container-sm bg-white border rounded">
-              <p>{{ event.category }}</p>
-              <p>{{ formatTime(event.eventDate) }}</p>
-            </div>
-          </div>
-          <section class="polaznici">
-            <div class="container-md">
-              <h1 class="text-start">Going:</h1>
-              <div class="row row-cols-3 py-5">
-                <div
-                  class="col container m-2 border rounded shadow bg-light"
-                  v-for="go in event.going"
-                  :key="go"
-                >
-                  <p>{{ go }}</p>
+                <section>
+                  <h5>Tags:</h5>
+                  <div class="row py-3">
+                    <div class="col d-flex justify-content-center">
+                      <div class="tag rounded-pill border px-4 py-3 fw-bold">
+                        {{ event.category }}
+                      </div>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                      <div class="tag rounded-pill border px-4 py-3 fw-bold">
+                        {{ event.city }}
+                      </div>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                      <div class="tag rounded-pill border px-4 py-3 fw-bold">
+                        {{ formatTime2(event.eventDate) }}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <div class="text-center pt-5 pb-3" v-if="event.limit">
+                  <p>People going: {{ event.people }}/{{ event.limit }}</p>
+                </div>
+                <div class="container text-center" v-if="this.exist == false">
+                  <button class="btn btn-primary text-center" @click="pat">
+                    Im going
+                  </button>
                 </div>
               </div>
             </div>
-          </section>
+
+            <div class="col-md-3 col-sm-12 pb-5">
+              <div class="container-sm bg-white border rounded">
+                <p>{{ event.category }}</p>
+                <p>{{ formatTime(event.eventDate) }}</p>
+              </div>
+            </div>
+
+            <section class="polaznici">
+              <div class="container-md">
+                <h1 class="text-start">Going:</h1>
+                <div class="row row-cols-3 py-5">
+                  <div
+                    class="col container m-2 border rounded shadow bg-light"
+                    v-for="go in event.going"
+                    :key="go"
+                  >
+                    <p>{{ go }}</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <hr />
         </div>
-        <hr />
       </section>
     </div>
 
