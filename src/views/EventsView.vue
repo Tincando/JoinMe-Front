@@ -34,10 +34,10 @@
               v-model="store.day_tag"
             >
               <option disabled value="">Any day</option>
-              <option value="soon">Starting soon</option>
-              <option value="today">Today</option>
-              <option value="tomorrow">Tomorrow</option>
+              <option value="day">Today</option>
               <option value="week">This week</option>
+              <option value="month">This month</option>
+              <option value="year">This year</option>
             </select>
           </div>
           <div class="col">
@@ -66,7 +66,6 @@
         <dogadaj :info="event"
       /></router-link>
     </div>
-    <p>{{ this.$route.query.category }}</p>
   </div>
 </template>
 

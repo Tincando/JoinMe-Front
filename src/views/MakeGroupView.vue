@@ -85,6 +85,16 @@
             />
           </div>
 
+          <div class="form-group">
+            <input
+              class="form-control"
+              type="number"
+              id="age"
+              v-model="age"
+              min="1"
+            />
+          </div>
+
           <div class="form-group py-3">
             <button class="btn btn-primary" type="submit">Make</button>
           </div>
@@ -108,6 +118,7 @@ export default {
       city: "",
       details: "",
       eventDate: "",
+      age: 18,
       limit: 1,
       user: JSON.parse(localStorage.getItem("user")).username,
       going: [],
@@ -127,9 +138,10 @@ export default {
           title: this.eventName,
           city: this.city,
           details: this.details,
-          eventDate: this.eventDate,
+          eventDate: new Date(this.eventDate),
           limit: 0,
           people: 0,
+          age: this.age,
           going: [this.user],
         };
       } else {
@@ -142,7 +154,8 @@ export default {
           city: this.city,
           limit: this.limit,
           details: this.details,
-          eventDate: this.eventDate,
+          eventDate: new Date(this.eventDate),
+          age: this.age,
           going: [this.user],
           people: 0,
         };
