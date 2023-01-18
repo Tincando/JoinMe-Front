@@ -18,7 +18,7 @@
             <select
               class="form-select rounded-pill"
               aria-label="Default select example"
-              v-model="store.category_tag"
+              v-model="cat"
             >
               <option value="" disabled>Category</option>
               <option value="theater">Theater</option>
@@ -66,6 +66,7 @@
         <dogadaj :info="event"
       /></router-link>
     </div>
+    <p>{{ this.$route.query.category }}</p>
   </div>
 </template>
 
@@ -82,6 +83,7 @@ export default {
       store,
       events: [],
       term: "",
+      cat: "",
     };
   },
   components: {
@@ -123,7 +125,7 @@ export default {
     },
     async filterPosts(term, category, day, age) {
       term = store.searchTerm;
-      category = store.category_tag || this.category;
+      category = this.cat || this.$route.query.category;
       day = store.day_tag;
       age = store.age_tag;
 
@@ -131,8 +133,14 @@ export default {
     },
   },
 
+  async getTheater() {
+    category = this.$route.query;
+
+    this.events = await Events.getAll(term, category, day, age);
+  },
+
   created() {
-    this.fetchPosts();
+    this.filterPosts();
   },
 };
 </script>

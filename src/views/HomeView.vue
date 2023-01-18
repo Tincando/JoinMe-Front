@@ -40,7 +40,14 @@
                 <p class="card-text py-3">
                   Looking for a concert? Look no further
                 </p>
-                <router-link to="/events" class="btn btn-warning py-3"
+                <router-link
+                  :to="{
+                    name: 'events',
+                    query: {
+                      category: 'concert',
+                    },
+                  }"
+                  class="btn btn-warning py-3"
                   >To Concerts</router-link
                 >
               </div>
@@ -54,7 +61,14 @@
                 <p class="card-text py-3">
                   Looking for a theater event? Look no further
                 </p>
-                <router-link to="events" class="btn btn-warning py-3"
+                <router-link
+                  :to="{
+                    name: 'events',
+                    query: {
+                      category: 'theater',
+                    },
+                  }"
+                  class="btn btn-warning py-3"
                   >To Theater</router-link
                 >
               </div>
@@ -68,7 +82,14 @@
                 <p class="card-text py-3">
                   Looking for a Pub event? Look no further
                 </p>
-                <router-link to="/events" class="btn btn-warning py-3"
+                <router-link
+                  :to="{
+                    name: 'events',
+                    query: {
+                      category: 'pub',
+                    },
+                  }"
+                  class="btn btn-warning py-3"
                   >To Pubs</router-link
                 >
               </div>
