@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar.vue";
 import SignUp_modal from "./components/SignUp_modal.vue";
 import { Auth } from "@/services";
 import store from "@/store.js";
+import moment from "moment";
 
 export default {
   name: "app",

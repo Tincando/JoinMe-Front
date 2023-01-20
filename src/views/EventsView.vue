@@ -31,7 +31,7 @@
             <select
               class="form-select rounded-pill"
               aria-label="Default select example"
-              v-model="store.day_tag"
+              v-model="day"
             >
               <option disabled value="">Any day</option>
               <option value="day">Today</option>
@@ -44,7 +44,7 @@
             <select
               class="form-select rounded-pill"
               aria-label="Default select example"
-              v-model="store.age_tag"
+              v-model="age"
             >
               <option disabled value="">Ages 0-99</option>
               <option value="18">18-30</option>
@@ -83,6 +83,8 @@ export default {
       events: [],
       term: "",
       cat: "",
+      day: "",
+      age: "",
     };
   },
   components: {
@@ -125,17 +127,11 @@ export default {
     async filterPosts(term, category, day, age) {
       term = store.searchTerm;
       category = this.cat || this.$route.query.category;
-      day = store.day_tag;
-      age = store.age_tag;
+      day = this.day;
+      age = this.age;
 
       this.events = await Events.getAll(term, category, day, age);
     },
-  },
-
-  async getTheater() {
-    category = this.$route.query;
-
-    this.events = await Events.getAll(term, category, day, age);
   },
 
   created() {

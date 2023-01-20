@@ -106,6 +106,7 @@
 
 <script>
 import { Events } from "@/services";
+import moment from "moment";
 
 export default {
   name: "start_a_group",
@@ -138,7 +139,7 @@ export default {
           title: this.eventName,
           city: this.city,
           details: this.details,
-          eventDate: new Date(this.eventDate),
+          eventDate: moment(this.eventDate).format(),
           limit: 0,
           people: 0,
           age: this.age,
@@ -154,7 +155,7 @@ export default {
           city: this.city,
           limit: this.limit,
           details: this.details,
-          eventDate: new Date(this.eventDate),
+          eventDate: moment(this.eventDate).format(),
           age: this.age,
           going: [this.user],
           people: 0,

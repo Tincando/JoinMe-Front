@@ -106,7 +106,7 @@ let Events = {
           city: doc.city,
           posted_at: doc.postedAt,
           category: doc.category,
-          eventDate: new Date(doc.eventDate),
+          eventDate: Date(doc.eventDate),
           age: doc.age,
         };
       } else {
@@ -120,7 +120,7 @@ let Events = {
           limit: doc.limit,
           people: doc.people,
           category: doc.category,
-          eventDate: new Date(doc.eventDate),
+          eventDate: Date(doc.eventDate),
           age: doc.age,
         };
       }
