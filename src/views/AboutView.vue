@@ -2,9 +2,11 @@
   <div class="about">
     <div class="spacer curve2"></div>
     <div class="container-md">
-      <h1>With JoinMe, you'll never have to go to an event alone again.</h1>
+      <h1 class="hidden tr-1">
+        With JoinMe, you'll never have to go to an event alone again.
+      </h1>
       <section>
-        <div class="container-md">
+        <div class="container-md hidden tr-3">
           <svg
             class="container-md"
             id="visual"
@@ -35,13 +37,15 @@
           </svg>
         </div>
       </section>
-      <h1>Start exploring and connecting with others today!</h1>
+      <h1 class="hidden tr-2">
+        Start exploring and connecting with others today!
+      </h1>
     </div>
     <div class="spacer curve2 flip"></div>
   </div>
 
   <section class="pt-5">
-    <div class="container border rounded py-5">
+    <div class="container border rounded py-5 hidden tr-1">
       <h5>
         Welcome to JoinMe the ultimate platform for finding and connecting with
         like-minded individuals who want to attend events together.<br />Whether
@@ -64,7 +68,7 @@
         align-items-center
       "
     >
-      <h1 class="">
+      <h1 class="hidden tr-2">
         From music festivals and sporting events to theater performances and
         more, we've got you covered.
       </h1>
@@ -78,7 +82,7 @@
         the ability to create and join events-based communities.
       </h5>
     </div>
-    <div class="container p-5 border rounded">
+    <div class="container p-5 border rounded hidden tr-2">
       <h3>"Because fun never stops"</h3>
       <p class="fst-italic">-Nikola Tesla-</p>
     </div>
@@ -100,6 +104,18 @@ export default {
       { path: "#blob2" },
       { repeat: 999, duration: 3000, yoyo: true }
     ).start();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        console.log(entry);
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
+
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((el) => observer.observe(el));
   },
 };
 </script>
