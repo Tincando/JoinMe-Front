@@ -99,13 +99,52 @@
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">Events</h6>
             <p>
-              <a href="#!" class="text-reset">Concerts</a>
+              <router-link
+                :to="{
+                  name: 'events',
+                  query: {
+                    category: 'concert',
+                  },
+                }"
+                class="text-reset"
+                >Concerts</router-link
+              >
             </p>
             <p>
-              <a href="#!" class="text-reset">Pubs</a>
+              <router-link
+                :to="{
+                  name: 'events',
+                  query: {
+                    category: 'pub',
+                  },
+                }"
+                class="text-reset"
+                >Pubs</router-link
+              >
             </p>
             <p>
-              <a href="#!" class="text-reset">Theater</a>
+              <router-link
+                :to="{
+                  name: 'events',
+                  query: {
+                    category: 'theater',
+                  },
+                }"
+                class="text-reset"
+                >Theater</router-link
+              >
+            </p>
+            <p>
+              <router-link
+                :to="{
+                  name: 'events',
+                  query: {
+                    category: 'other',
+                  },
+                }"
+                class="text-reset"
+                >Other</router-link
+              >
             </p>
           </div>
           <!-- Grid column -->
