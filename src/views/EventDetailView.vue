@@ -208,6 +208,7 @@ export default {
         comment: this.comment,
         user: this.user,
         event_id: this.event.id,
+        image: JSON.parse(localStorage.getItem("user")).profil_image,
         postedAt: new Date(),
       };
 

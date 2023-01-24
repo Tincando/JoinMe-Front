@@ -200,6 +200,7 @@ let Chat = {
         user: doc.user,
         event_id: doc.event_id,
         postedAt: doc.postedAt,
+        image: doc.image,
       };
     });
 

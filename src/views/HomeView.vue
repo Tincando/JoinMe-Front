@@ -29,35 +29,44 @@
     <section class="yellow">
       <div class="spacer curve2"></div>
       <!-- Jos jedan section-->
+      <div class="container mt-min3">
+        <h2 class="text-start pb-4" style="color: white">
+          CHOOSE YOUR POISON?
+        </h2>
+      </div>
 
       <div class="container pb-5">
         <div class="row">
-          <div class="col hidden tr-3">
-            <div class="card shad">
-              <div class="container py-5">
-                <h5 class="card-title py-3 fw-bold">Concerts</h5>
-                <img class="w-50 rounded" src="@/assets/concerts.png" />
-                <p class="card-text py-3">
-                  Looking for a concert? Look no further
-                </p>
-                <router-link
-                  :to="{
-                    name: 'events',
-                    query: {
-                      category: 'concert',
-                    },
-                  }"
-                  class="btn btn-warning py-3"
-                  >To Concerts</router-link
-                >
+          <div class="row">
+            <div class="col-md hidden tr-3 py-3">
+              <div class="container">
+                <div class="card shad">
+                  <h5 class="card-title py-3 fw-bold">Concerts</h5>
+                  <div class="flex justify-content-center">
+                    <img class="w-75 rounded" src="@/assets/concerts.png" />
+                  </div>
+                  <p class="card-text py-3">
+                    Looking for a concert? Look no further
+                  </p>
+                  <router-link
+                    :to="{
+                      name: 'events',
+                      query: {
+                        category: 'concert',
+                      },
+                    }"
+                    class="btn btn-warning py-3"
+                    >To Concerts</router-link
+                  >
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col hidden tr-2">
-            <div class="card shad">
-              <div class="container py-5">
+            <div class="col-md hidden tr-2 py-3">
+              <div class="card shad">
                 <h5 class="card-title py-3 fw-bold">Theater</h5>
-                <img class="w-50 rounded" src="@/assets/theater.png" />
+                <div class="flex justify-content-center">
+                  <img class="w-75 rounded" src="@/assets/theater.png" />
+                </div>
                 <p class="card-text py-3">
                   Looking for a theater event? Look no further
                 </p>
@@ -73,12 +82,13 @@
                 >
               </div>
             </div>
-          </div>
-          <div class="col hidden tr-1">
-            <div class="card shad">
-              <div class="container py-5">
+            <div class="col-md hidden tr-1 py-3">
+              <div class="card shad">
                 <h5 class="card-title py-3 fw-bold">Pub</h5>
-                <img class="w-50 rounded" src="@/assets/pubs.png" />
+                <div class="flex justify-content-center">
+                  <img class="w-75 rounded" src="@/assets/pubs.png" />
+                </div>
+
                 <p class="card-text py-3">
                   Looking for a Pub event? Look no further
                 </p>
@@ -112,55 +122,58 @@
             enthusiasm? No problem we got you!
           </p>
           <div class="container">
-            <div class="row p-5">
-              <div class="col group hidden tr-3 py-5">
-                <div class="container py-4">
-                  <img
-                    class="container w-50 rounded-circle"
-                    src="@/assets/startagroup.jpg"
-                  />
+            <div class="row">
+              <div class="row p-5">
+                <div class="col-md group hidden tr-3 py-5">
+                  <div class="container py-4">
+                    <img
+                      class="container w-50 rounded-circle"
+                      src="@/assets/startagroup.jpg"
+                    />
+                  </div>
+                  <div class="px-5">
+                    <h2 class="fw-bold">Join a group</h2>
+                    <p>
+                      Do what you like, with others who like it too, find your
+                      like-minded people. And the rest is history!
+                    </p>
+                  </div>
                 </div>
-                <div class="px-5">
-                  <h2 class="fw-bold">Join a group</h2>
-                  <p>
-                    Do what you like, with others who like it too, find your
-                    like-minded people. And the rest is history!
-                  </p>
+                <div class="col-md hidden tr-2 py-5">
+                  <div class="container py-4">
+                    <img
+                      class="container w-50 rounded-circle"
+                      src="@/assets/find_an_event.png"
+                    />
+                  </div>
+                  <div class="px-5">
+                    <h2 class="fw-bold">Find an event</h2>
+                    <p>
+                      Concert, shows, events are happening all the time find
+                      someone who has the same taste as you.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="col hidden tr-2 py-5">
-                <div class="container py-4">
-                  <img
-                    class="container w-50 rounded-circle"
-                    src="@/assets/find_an_event.png"
-                  />
-                </div>
-                <div class="px-5">
-                  <h2 class="fw-bold">Find an event</h2>
-                  <p>
-                    Concert, shows, events are happening all the time find
-                    someone who has the same taste as you.
-                  </p>
-                </div>
-              </div>
-              <div class="col group hidden tr-1 py-5">
-                <div class="container py-4">
-                  <img
-                    class="container w-50 rounded-circle"
-                    src="@/assets/start_a_group.png"
-                  />
-                </div>
-                <div class="px-5">
-                  <h2 class="fw-bold">Start a group</h2>
-                  <p>
-                    You don’t have to be an extrovert to find people to go with
-                    you.
-                  </p>
+                <div class="col-md group hidden tr-1 py-5">
+                  <div class="container py-4">
+                    <img
+                      class="container w-50 rounded-circle"
+                      src="@/assets/start_a_group.png"
+                    />
+                  </div>
+                  <div class="px-5">
+                    <h2 class="fw-bold">Start a group</h2>
+                    <p>
+                      You don’t have to be an extrovert to find people to go
+                      with you.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <div v-if="!auth.authenticated">
           <button
             class="btn btn-lg btn-warning"

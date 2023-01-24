@@ -85,7 +85,10 @@
             />
           </div>
 
-          <div class="form-group">
+          <div class="form-group py-2">
+            <label class="form-check-label" for="age">
+              Set the age range
+            </label>
             <input
               class="form-control"
               type="number"

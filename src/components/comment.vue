@@ -3,10 +3,7 @@
     <div class="px-5 py-3">
       <div class="text-start">
         <div class="d-flex">
-          <img
-            class="profil img-thumbnail rounded-circle"
-            src="@/assets/nT.png"
-          />
+          <img class="profil img-thumbnail rounded-circle" :src="info.image" />
           <p class="fw-bold p-3">{{ info.user }}</p>
         </div>
         <p>{{ info.comment }}</p>

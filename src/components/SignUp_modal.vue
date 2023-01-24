@@ -32,6 +32,15 @@
                 id="name"
                 aria-describedby="name"
               />
+              <label for="Profil image">Profil image</label>
+              <input
+                type="profil_image"
+                v-model="profil_image"
+                class="form-control"
+                id="profil"
+                aria-describedby="image"
+                placeholder="profil image url"
+              />
               <label for="exampleInputEmail1">Email address</label>
               <input
                 type="email"
@@ -63,7 +72,7 @@
               aria-describedby="location"
               placeholder="City or zip code"
             />
-            <div class="form-group">
+            <div class="form-group py-2">
               <label for="age">Age</label>
               <input
                 type="number"
@@ -98,6 +107,7 @@ export default {
       password: "",
       location: " ",
       age: " ",
+      profil_image: "",
     };
   },
   methods: {
@@ -106,6 +116,9 @@ export default {
         name: this.name,
         username: this.email,
         password: this.password,
+        location: this.location,
+        age: this.age,
+        profil_image: this.profil_image,
       };
       let success = await User.signup(newuser);
       console.log("Rezultat prijave", success);
