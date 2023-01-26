@@ -2,7 +2,7 @@ import axios from "axios";
 import $router from "@/router";
 
 let Service = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: "https://joinme-cd1i.onrender.com" || "http://localhost:3000/",
   timeout: 1000,
 });
 
