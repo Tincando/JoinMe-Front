@@ -109,28 +109,6 @@
         <div :key="comment.id" v-for="comment in comments">
           <comment :info="comment"></comment>
         </div>
-        <div class="p-5">
-          <div class="text-start">
-            <div class="d-flex">
-              <img
-                class="profil img-thumbnail rounded-circle"
-                src="@/assets/nT.png"
-              />
-              <p class="fw-bold p-3">User1234</p>
-            </div>
-            <p>It will be amazing!!!</p>
-          </div>
-          <div class="reply text-start p-3">
-            <div class="d-flex">
-              <img
-                class="profil img-thumbnail rounded-circle"
-                src="@/assets/mic.png"
-              />
-              <p class="fw-bold p-3">UserKing</p>
-            </div>
-            <p>I can't wait! :)</p>
-          </div>
-        </div>
       </div>
     </section>
   </div>
